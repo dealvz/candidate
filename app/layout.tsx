@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { geist, geistMono, lora } from "./fonts";
 import "./globals.css";
@@ -77,8 +78,16 @@ export default function RootLayout({
     >
       <body className="bg-background font-sans antialiased text-foreground">
         <div className="flex min-h-dvh flex-col">
-          <header className="px-6 py-4">
-            <span className="text-3xl font-semibold font-serif tracking-tight">Candidate</span>
+          <header className="flex items-center gap-0 px-6 py-4">
+            <Image
+              src="/logo.png"
+              alt="Candidate logo"
+              width={32}
+              height={32}
+              className="h-8 w-8"
+              priority
+            />
+            <span className="text-3xl font-serif font-semibold tracking-tight">andidate</span>
           </header>
           <main className="flex-1">{children}</main>
         </div>
