@@ -1,9 +1,10 @@
-import Image from "next/image";
-import type { Metadata } from "next";
-import { geist, geistMono, lora } from "./fonts";
-import "./globals.css";
+import type React from "react"
+import Image from "next/image"
+import type { Metadata } from "next"
+import { geist, geistMono, lora } from "./fonts"
+import "./globals.css"
 
-const SITE_NAME = "Candidate";
+const SITE_NAME = "Candidate"
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"),
@@ -11,35 +12,23 @@ export const metadata: Metadata = {
     default: SITE_NAME,
     template: `%s · ${SITE_NAME}`,
   },
-  description:
-    "Explore a candidate’s background, key issues, and campaign metrics at a glance.",
+  description: "Explore a candidate’s background, key issues, and campaign metrics at a glance.",
   applicationName: SITE_NAME,
-  keywords: [
-    "candidate profile",
-    "elections",
-    "campaign",
-    "issues",
-    "metrics",
-    "bio",
-  ],
+  keywords: ["candidate profile", "elections", "campaign", "issues", "metrics", "bio"],
   // TODO: generate og image
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
     title: SITE_NAME,
-    description:
-      "Explore a candidate’s background, key issues, and campaign metrics at a glance.",
+    description: "Explore a candidate’s background, key issues, and campaign metrics at a glance.",
     url: "/",
-    images: [
-      { url: "/og-default.png", width: 1200, height: 630, alt: `${SITE_NAME} – default` },
-    ],
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: `${SITE_NAME} – default` }],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
-    description:
-      "Explore a candidate’s background, key issues, and campaign metrics at a glance.",
+    description: "Explore a candidate’s background, key issues, and campaign metrics at a glance.",
     images: ["/og-default.png"],
   },
   // TODO: generate an icon
@@ -64,34 +53,25 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "/" },
   category: "Politics",
-};
+    generator: 'v0.app'
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geist.variable} ${geistMono.variable} ${lora.variable}`}
-    >
+    <html lang="en" className={`${geist.variable} ${geistMono.variable} ${lora.variable}`}>
       <body className="bg-background font-sans antialiased text-foreground">
         <div className="flex min-h-dvh flex-col">
-          <header className="flex items-center gap-0 px-6 py-4">
-            <Image
-              src="/logo.png"
-              alt="Candidate logo"
-              width={32}
-              height={32}
-              className="h-8 w-8"
-              priority
-            />
+          <header className="absolute top-0 left-0 right-0 z-50 flex items-center gap-0 px-6 py-4 bg-transparent">
+            <Image src="/logo.png" alt="Candidate logo" width={32} height={32} className="h-8 w-8" priority />
             <span className="text-3xl font-serif font-semibold tracking-tight">andidate</span>
           </header>
           <main className="flex-1">{children}</main>
         </div>
       </body>
     </html>
-  );
+  )
 }
