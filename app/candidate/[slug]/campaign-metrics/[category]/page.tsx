@@ -58,9 +58,9 @@ export default async function DeepDivePage({
       </Link>
 
       <div className="space-y-6">
-        <h1 className="font-serif text-3xl font-bold tracking-tight text-pretty">
+        <h2 className="font-serif text-3xl font-bold tracking-tight text-pretty">
           {insight.headline}
-        </h1>
+        </h2>
 
         <EChart option={option} height={400} />
 

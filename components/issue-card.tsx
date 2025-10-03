@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-interface ImageCardProps {
+interface IssueCardProps {
   title: string;
   description?: string;
   imageSrc: string;
@@ -10,17 +10,17 @@ interface ImageCardProps {
   href?: string;
 }
 
-export function ImageCard({ title, description, imageSrc, className, href }: ImageCardProps) {
+export function IssueCard({ title, description, imageSrc, className, href }: IssueCardProps) {
   const hasDescription = Boolean(description && description.trim().length > 0);
 
   return (
     <article
       className={cn(
-        "group relative aspect-square overflow-hidden rounded-[36px] bg-card p-3 shadow-lg ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1 dark:ring-white/10 animate-in fade-in slide-in-from-bottom-4 animation-duration-500",
+        "group relative aspect-square flex flex-col rounded-[36px] bg-card p-3 shadow-lg ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1 dark:ring-white/10 animate-in fade-in slide-in-from-bottom-4 animation-duration-500",
         className,
       )}
     >
-      <div className="relative h-full w-full overflow-hidden rounded-[30px]">
+      <div className="relative flex-1 overflow-hidden rounded-[30px]">
         <Image
           src={imageSrc}
           alt={title}
@@ -32,13 +32,13 @@ export function ImageCard({ title, description, imageSrc, className, href }: Ima
           <div className="relative w-full p-6">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-full rounded-b-[30px] bg-gradient-to-t from-black/75 via-black/35 to-transparent"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-full rounded-b-[30px] bg-gradient-to-t from-black/75 via-black/55 to-transparent"
             />
             <div className="relative flex flex-col gap-3 text-white">
               <h3 className="text-2xl font-semibold tracking-tight drop-shadow-lg">{title}</h3>
               <p
                 className={cn(
-                  "min-h-[44px] text-sm leading-snug text-white/80",
+                  "min-h-[44px] text-sm leading-snug font-medium text-white/90",
                   !hasDescription && "opacity-0",
                 )}
                 aria-hidden={!hasDescription}

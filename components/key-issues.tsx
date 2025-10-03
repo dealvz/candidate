@@ -1,4 +1,4 @@
-import { ImageCard } from "@/components/image-card";
+import { IssueCard } from "@/components/issue-card";
 
 interface Issue {
   slug: string;
@@ -22,7 +22,7 @@ export function KeyIssues({ issues, candidateSlug }: { issues: Issue[]; candidat
           {issues.slice(0, 4).map((issue) => {
             const img = `/issues/issue-${issue.slug}-min.png`;
             return (
-              <ImageCard
+              <IssueCard
                 key={issue.slug}
                 title={issue.title}
                 description={issue.summary}

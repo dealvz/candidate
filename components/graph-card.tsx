@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { Maximize2 } from "lucide-react";
+import { Expand } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface GraphCardProps {
@@ -45,10 +45,10 @@ export function GraphCard({
         <div className="flex justify-end absolute top-3 right-3 z-10">
           <Link
             href={expandHref}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-background/60 text-muted-foreground transition hover:border-border hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            className="inline-flex h-9 w-9 items-center justify-center text-muted-foreground transition hover:border-border hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             aria-label={expandLabel ?? `Expand ${title}`}
           >
-            <Maximize2 className="h-4 w-4" />
+            <Expand className="h-5 w-5" />
           </Link>
         </div>
       ) : null}

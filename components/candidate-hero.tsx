@@ -81,9 +81,9 @@ export function CandidateHero({ candidate, share, avgDonationUSD }: CandidateHer
             <ShareMenu url={share.url} title={share.title} hashtags={share.hashtags} />
           </div>
 
-          <h1 className="text-5xl font-serif font-bold tracking-tight text-balance sm:text-6xl">
+          <h2 className="text-5xl font-serif font-bold tracking-tight text-balance sm:text-6xl">
             {name}
-          </h1>
+          </h2>
 
           {office && (
             <p className="text-lg text-muted-foreground font-medium text-pretty">
