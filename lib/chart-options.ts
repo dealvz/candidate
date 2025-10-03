@@ -19,6 +19,8 @@ interface PieSeriesOption {
 }
 
 const baseGrid = { left: 40, right: 20, bottom: 40, top: 20 } as const;
+// Extra top padding leaves room for legends on compact viewports.
+const baseGridWithLegend = { ...baseGrid, top: 56 } as const;
 const baseTooltip = { trigger: "axis" as const };
 
 /** Bar */
@@ -34,7 +36,7 @@ export function buildBarOption({ categories, series, yLabel }: SimpleSeriesOptio
 
 export function buildMultiAxisOption({ categories, series, yLabel }: MultiSeriesOption): EChartsOption {
   return {
-    grid: baseGrid,
+    grid: baseGridWithLegend,
     tooltip: baseTooltip,
     legend: { top: 0 },
     xAxis: { type: "category", data: categories },

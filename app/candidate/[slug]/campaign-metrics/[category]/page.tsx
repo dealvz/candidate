@@ -48,7 +48,7 @@ export default async function DeepDivePage({
   const option = buildOptionFromSpec(deepDive.chart);
 
   return (
-    <section className="container mx-auto max-w-5xl px-6 py-12 space-y-10">
+    <section className="container mx-auto max-w-5xl px-0 lg:pt-12 pb-12 space-y-10 sm:px-6">
       <Link
         href={`/candidate/${slug}/campaign-metrics`}
         className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"

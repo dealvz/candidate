@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NextCandidateLinkProps {
@@ -28,13 +27,15 @@ export function NextCandidateLink({ currentSlug, nextCandidate, className }: Nex
     <Link
       href={href}
       className={cn(
-        "absolute bottom-8 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-border bg-background text-muted-foreground shadow-sm transition hover:bg-primary hover:text-primary-foreground",
+        "group inline-flex items-center text-base font-medium text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className,
       )}
-      aria-label={`Next candidate: ${nextCandidate.name}`}
+      aria-label={"Next candidate"}
       title={`View ${nextCandidate.name}`}
     >
-      <ArrowRight className="h-4 w-4" />
+      <span className="relative inline-block pb-1">
+        <span className="relative z-10">Next candidate</span>
+      </span>
     </Link>
   );
 }

@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { CandidateHero } from "@/components/candidate-hero";
-import { NextCandidateLink } from "@/components/next-candidate-link";
 import { getAllCandidates, getCandidateBySlug } from "@/lib/data";
 import { buildMetricSummary } from "@/lib/metrics";
 
@@ -31,11 +30,10 @@ export default async function CandidateLayout({ children, params }: CandidateLay
   const shareHashtags = candidate.party
     ? [candidate.party.replace(/[^a-z0-9]+/gi, "").toLowerCase()]
     : ["candidate"];
-
   return (
     <section className="relative bg-muted/30 animate-in fade-in animation-duration-400">
       <div className="grid min-h-screen lg:h-screen lg:grid-cols-2">
-        <div className="relative z-10 flex items-center px-6 py-16 lg:sticky lg:top-0 lg:h-screen lg:px-12 lg:py-24 animate-in fade-in slide-in-from-left-4 animation-duration-500">
+        <div className="relative z-10 flex items-center px-6 py-16 lg:pt-40 lg:sticky lg:top-0 lg:h-screen lg:px-12 lg:py-24 animate-in fade-in slide-in-from-left-4 animation-duration-500">
           <CandidateHero
             candidate={{
               slug,
@@ -51,14 +49,8 @@ export default async function CandidateLayout({ children, params }: CandidateLay
               hashtags: shareHashtags,
             }}
             avgDonationUSD={metricSummary.avgDonationUSD}
+            nextCandidate={nextCandidate ? { slug: nextCandidate.slug, name: nextCandidate.name } : undefined}
           />
-
-          {nextCandidate && (
-            <NextCandidateLink
-              currentSlug={slug}
-              nextCandidate={{ slug: nextCandidate.slug, name: nextCandidate.name }}
-            />
-          )}
         </div>
 
         <div className="relative bg-background lg:h-screen lg:overflow-y-auto">

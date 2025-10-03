@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import ShareMenu from "./share-menu";
 import { CandidateHeroNav } from "./candidate-hero-nav";
+import { NextCandidateLink } from "./next-candidate-link";
 
 interface CandidateHeroProps {
   candidate: {
@@ -21,9 +22,13 @@ interface CandidateHeroProps {
     hashtags?: string[];
   };
   avgDonationUSD: number;
+  nextCandidate?: {
+    slug: string;
+    name: string;
+  };
 }
 
-export function CandidateHero({ candidate, share, avgDonationUSD }: CandidateHeroProps) {
+export function CandidateHero({ candidate, share, avgDonationUSD, nextCandidate }: CandidateHeroProps) {
   const { slug, name, party, office, slogan, photoUrl } = candidate;
   const basePath = `/candidate/${slug}`;
 
@@ -56,7 +61,11 @@ export function CandidateHero({ candidate, share, avgDonationUSD }: CandidateHer
   })();
 
   return (
-    <div className="max-w-xl space-y-6">
+    <div className="max-w-xl space-y-5">
+      <header className="absolute top-0 left-0 right-0 z-50 flex items-center gap-0 px-6 py-4 bg-transparent">
+        <Image src="/logo.png" alt="Candidate logo" width={32} height={32} className="h-8 w-8" priority />
+        <span className="text-3xl font-serif font-semibold tracking-tight">andidate</span>
+      </header>
       <div className="flex items-end gap-4 sm:gap-6">
         {photoUrl && (
           <div className="relative h-56 w-36 shrink-0 overflow-hidden rounded-[36px] border border-border bg-card sm:h-72 sm:w-48">
@@ -71,7 +80,7 @@ export function CandidateHero({ candidate, share, avgDonationUSD }: CandidateHer
           </div>
         )}
 
-        <div className="space-y-4 self-end">
+        <div className="space-y-2 self-end">
           <div className="flex flex-wrap gap-2.5">
             {party && (
               <Badge variant="secondary" className={cn("text-sm px-4 py-1.5", partyClassName)}>
@@ -123,6 +132,13 @@ export function CandidateHero({ candidate, share, avgDonationUSD }: CandidateHer
           linkClassName={linkBaseClass}
           highlightClassName={highlightClass}
         />
+        {nextCandidate ? (
+          <NextCandidateLink
+            currentSlug={slug}
+            nextCandidate={nextCandidate}
+            className={cn(linkBaseClass, "text-muted-foreground")}
+          />
+        ) : null}
       </div>
     </div>
   );

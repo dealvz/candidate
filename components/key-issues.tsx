@@ -17,21 +17,19 @@ export function KeyIssues({ issues, candidateSlug }: { issues: Issue[]; candidat
         </p>
       </div>
 
-      <div className="key-issues-container mx-auto w-full max-w-3xl">
-        <div className="key-issues-grid grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {issues.slice(0, 4).map((issue) => {
-            const img = `/issues/issue-${issue.slug}-min.png`;
-            return (
-              <IssueCard
-                key={issue.slug}
-                title={issue.title}
-                description={issue.summary}
-                imageSrc={img}
-                href={`/candidate/${candidateSlug}/key-issues/${issue.slug}/articles`}
-              />
-            );
-          })}
-        </div>
+      <div className="key-issues-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+        {issues.slice(0, 4).map((issue) => {
+          const img = `/issues/issue-${issue.slug}-min.png`;
+          return (
+            <IssueCard
+              key={issue.slug}
+              title={issue.title}
+              description={issue.summary}
+              imageSrc={img}
+              href={`/candidate/${candidateSlug}/key-issues/${issue.slug}/articles`}
+            />
+          );
+        })}
       </div>
     </section>
   );

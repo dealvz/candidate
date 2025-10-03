@@ -48,7 +48,7 @@ export function IssueCard({ title, description, imageSrc, className, href }: Iss
               {href ? (
                 <Link
                   href={href}
-                  className="pointer-events-auto inline-flex w-fit translate-y-3 items-center gap-2 rounded-full bg-white/90 px-5 py-2 text-sm font-medium text-neutral-900 shadow-lg backdrop-blur transition-all duration-300 opacity-0 hover:bg-white group-hover:translate-y-0 group-hover:opacity-100 focus-visible:translate-y-0 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 dark:bg-white/15 dark:text-white dark:hover:bg-white/25"
+                  className="pointer-events-auto inline-flex w-fit items-center gap-2 rounded-full bg-white/90 px-5 py-2 text-sm font-medium text-neutral-900 shadow-lg backdrop-blur transition-all duration-300 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 dark:bg-white/15 dark:text-white dark:hover:bg-white/25"
                 >
                   View full coverage
                 </Link>

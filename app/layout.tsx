@@ -1,5 +1,4 @@
 import type React from "react"
-import Image from "next/image"
 import type { Metadata } from "next"
 import { Toaster } from "@/components/ui/sonner"
 import { geist, geistMono, lora } from "./fonts"
@@ -66,10 +65,6 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable} ${geistMono.variable} ${lora.variable}`}>
       <body className="bg-background font-sans antialiased text-foreground">
         <div className="flex min-h-dvh flex-col">
-          <header className="absolute top-0 left-0 right-0 z-50 flex items-center gap-0 px-6 py-4 bg-transparent">
-            <Image src="/logo.png" alt="Candidate logo" width={32} height={32} className="h-8 w-8" priority />
-            <span className="text-3xl font-serif font-semibold tracking-tight">andidate</span>
-          </header>
           <main className="flex-1">{children}</main>
           <Toaster />
         </div>
