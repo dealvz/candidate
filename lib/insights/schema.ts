@@ -10,7 +10,6 @@ export const insightBlockSchema = z.object({
 });
 
 const baseChart = z.object({
-  id: z.string().min(1),
   title: z.string().min(1),
   narrative: z.string().min(20).max(600),
   forCategory: z.enum(["fundsRaised", "donors", "volunteers", "events"]).nullable(),

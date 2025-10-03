@@ -9,7 +9,6 @@ export interface InsightBlock {
 
 /** Base chart spec */
 interface BaseChartSpec {
-  id: string;
   title: string;
   narrative: string;
   forCategory: DeepDiveCategory | null;
