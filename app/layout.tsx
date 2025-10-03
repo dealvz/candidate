@@ -1,6 +1,7 @@
 import type React from "react"
 import Image from "next/image"
 import type { Metadata } from "next"
+import { Toaster } from "@/components/ui/sonner"
 import { geist, geistMono, lora } from "./fonts"
 import "./globals.css"
 
@@ -70,6 +71,7 @@ export default function RootLayout({
             <span className="text-3xl font-serif font-semibold tracking-tight">andidate</span>
           </header>
           <main className="flex-1">{children}</main>
+          <Toaster />
         </div>
       </body>
     </html>

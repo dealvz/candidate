@@ -1,17 +1,12 @@
-import { CandidateHero } from "@/components/candidate-hero"
-import { CampaignStats } from "@/components/campaign-stats"
-import { KeyIssues } from "@/components/key-issues"
+import { redirect, notFound } from "next/navigation";
+import { getAllCandidates } from "@/lib/data";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col">
-      <CandidateHero />
-      <div id="key-issues">
-        <KeyIssues />
-      </div>
-      <div id="campaign-metrics">
-        <CampaignStats />
-      </div>
-    </div>
-  )
+export default async function RootRedirect() {
+  // let's just add a redirect so we don't have to build the list of candidates right now
+  const allCandidates = await getAllCandidates();
+  const firstSlug = allCandidates[0]?.slug;
+  if (firstSlug) {
+    redirect(`/candidate/${firstSlug}`);
+  }
+  notFound();
 }

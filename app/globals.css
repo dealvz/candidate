@@ -25,6 +25,15 @@
 
   --accent: oklch(0.55 0.15 220); /* Trustworthy blue accent */
   --accent-foreground: oklch(0.985 0.002 247.858);
+  --link: #1173d4;
+  --party-democrat: #1f4d7a;
+  --party-democrat-foreground: #f4f7fb;
+  --party-republican: #7a2a2a;
+  --party-republican-foreground: #fdf2f2;
+  --party-independent: #2f5a48;
+  --party-independent-foreground: #eef8f3;
+  --party-nonpartisan: #4b5563;
+  --party-nonpartisan-foreground: #f5f6f8;
 
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0.002 247.858);
@@ -75,6 +84,15 @@
 
   --accent: oklch(0.65 0.15 220);
   --accent-foreground: oklch(0.95 0.005 247.858);
+  --link: #1173d4;
+  --party-democrat: #5c7fab;
+  --party-democrat-foreground: #0d1b2f;
+  --party-republican: #b46868;
+  --party-republican-foreground: #2a0b0b;
+  --party-independent: #5f9c81;
+  --party-independent-foreground: #0c1a14;
+  --party-nonpartisan: #7b8798;
+  --party-nonpartisan-foreground: #14171d;
 
   --destructive: oklch(0.55 0.22 27.325);
   --destructive-foreground: oklch(0.95 0.005 247.858);
@@ -119,6 +137,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-link: var(--link);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -178,6 +197,18 @@
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
+    }
+  }
+}
+/* this helps cards resize on different screen sizes */
+@layer utilities {
+  .key-issues-container {
+    container-type: inline-size;
+  }
+
+  @container (min-width: 36rem) {
+    .key-issues-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }

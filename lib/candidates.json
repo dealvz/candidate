@@ -1,0 +1,703 @@
+[
+  {
+    "id": "c1e7f2a8-4a2b-4b61-8d4e-7f6e9b1a0001",
+    "slug": "jane-doe",
+    "name": "Jane Doe",
+    "photoUrl": "/profiles/profile-jane-doe-min.png",
+    "office": "Mayor of Springfield",
+    "party": "Nonpartisan",
+    "slogan": "A safer, smarter Springfield.",
+    "issues": [
+      {
+        "slug": "public-safety",
+        "title": "Public Safety",
+        "summary": "Hire community officers, expand crisis response, and strengthen neighborhood partnerships."
+      },
+      {
+        "slug": "infrastructure",
+        "title": "Infrastructure",
+        "summary": "Fix roads and bridges, modernize water systems, and improve transit reliability."
+      },
+      {
+        "slug": "fiscal-responsibility",
+        "title": "Fiscal Responsibility",
+        "summary": "Balanced budgets, transparent spending, and performance-based contracting."
+      },
+      {
+        "slug": "housing-affordability",
+        "title": "Housing Affordability",
+        "summary": "Promote mixed-income housing, reduce permitting friction, and protect renters."
+      },
+      {
+        "slug": "small-business",
+        "title": "Small Business",
+        "summary": "Streamline licensing, expand micro-grants, and activate underused storefronts."
+      },
+      {
+        "slug": "cleaner-streets",
+        "title": "Cleaner Streets",
+        "summary": "Improve trash pickup, add lighting, and coordinate community cleanups."
+      }
+    ],
+    "metrics": {
+      "donations": [
+      { "name": "Alex Martin", "city": "Springfield", "state": "IL", "age": 42, "amountUSD": 220, "date": "2025-04-05" },
+      { "name": "Brianna Lee", "city": "Chatham", "state": "IL", "age": 29, "amountUSD": 180, "date": "2025-04-09" },
+      { "name": "Dana Schultz", "city": "Sherman", "state": "IL", "age": 51, "amountUSD": 170, "date": "2025-04-19" },
+      { "name": "Evan Brooks", "city": "Springfield", "state": "IL", "age": 34, "amountUSD": 210, "date": "2025-04-24" },
+      { "name": "Fatima Khan", "city": "Leland Grove", "state": "IL", "age": 27, "amountUSD": 160, "date": "2025-04-29" },
+
+      { "name": "Hannah Clark", "city": "Chatham", "state": "IL", "age": 33, "amountUSD": 175, "date": "2025-05-08" },
+      { "name": "Ian Turner", "city": "Springfield", "state": "IL", "age": 41, "amountUSD": 205, "date": "2025-05-13" },
+      { "name": "Kyle Johnson", "city": "Sherman", "state": "IL", "age": 30, "amountUSD": 225, "date": "2025-05-23" },
+      { "name": "Lena Armstrong", "city": "Springfield", "state": "IL", "age": 44, "amountUSD": 190, "date": "2025-05-28" },
+      { "name": "Marcos Diaz", "city": "Springfield", "state": "IL", "age": 37, "amountUSD": 195, "date": "2025-05-30" },
+
+      { "name": "Nina Soto", "city": "Riverton", "state": "IL", "age": 28, "amountUSD": 180, "date": "2025-06-08" },
+      { "name": "Owen Myers", "city": "Springfield", "state": "IL", "age": 53, "amountUSD": 215, "date": "2025-06-12" },
+      { "name": "Priya Desai", "city": "Chatham", "state": "IL", "age": 35, "amountUSD": 170, "date": "2025-06-17" },
+      { "name": "Quincy Bell", "city": "Springfield", "state": "IL", "age": 47, "amountUSD": 205, "date": "2025-06-22" },
+      { "name": "Rosa Hernandez", "city": "Rochester", "state": "IL", "age": 31, "amountUSD": 195, "date": "2025-06-27" },
+      { "name": "Sarah Patel", "city": "Springfield", "state": "IL", "age": 39, "amountUSD": 225, "date": "2025-06-29" },
+
+      { "name": "Sam Owens", "city": "Sherman", "state": "IL", "age": 26, "amountUSD": 185, "date": "2025-07-03" },
+      { "name": "Tanya Nguyen", "city": "Springfield", "state": "IL", "age": 40, "amountUSD": 220, "date": "2025-07-08" },
+      { "name": "Victor Stone", "city": "Riverton", "state": "IL", "age": 54, "amountUSD": 210, "date": "2025-07-18" },
+      { "name": "Wendy Chen", "city": "Chatham", "state": "IL", "age": 29, "amountUSD": 200, "date": "2025-07-23" },
+      { "name": "Yara Singh", "city": "Springfield", "state": "IL", "age": 32, "amountUSD": 230, "date": "2025-07-29" },
+      { "name": "Zachary Cole", "city": "Rochester", "state": "IL", "age": 43, "amountUSD": 185, "date": "2025-07-30" },
+
+      { "name": "Andrea Brooks", "city": "Springfield", "state": "IL", "age": 37, "amountUSD": 215, "date": "2025-08-04" },
+      { "name": "Brandon Price", "city": "Sherman", "state": "IL", "age": 48, "amountUSD": 195, "date": "2025-08-09" },
+      { "name": "Carla Ruiz", "city": "Chatham", "state": "IL", "age": 34, "amountUSD": 225, "date": "2025-08-14" },
+      { "name": "Derek Simmons", "city": "Riverton", "state": "IL", "age": 41, "amountUSD": 205, "date": "2025-08-19" },
+      { "name": "Elena Torres", "city": "Springfield", "state": "IL", "age": 38, "amountUSD": 240, "date": "2025-08-24" },
+      { "name": "Frank Lewis", "city": "Springfield", "state": "IL", "age": 45, "amountUSD": 235, "date": "2025-08-26" },
+      { "name": "Grace Howard", "city": "Chatham", "state": "IL", "age": 33, "amountUSD": 220, "date": "2025-08-29" },
+
+      { "name": "Henry Wallace", "city": "Rochester", "state": "IL", "age": 52, "amountUSD": 210, "date": "2025-09-05" },
+      { "name": "Isabella Cruz", "city": "Springfield", "state": "IL", "age": 31, "amountUSD": 235, "date": "2025-09-09" },
+      { "name": "Jared Miller", "city": "Springfield", "state": "IL", "age": 29, "amountUSD": 245, "date": "2025-09-12" },
+      { "name": "Kara Mitchell", "city": "Springfield", "state": "IL", "age": 42, "amountUSD": 250, "date": "2025-09-15" },
+      { "name": "Liam Turner", "city": "Riverton", "state": "IL", "age": 39, "amountUSD": 210, "date": "2025-09-20" },
+      { "name": "Mia Reynolds", "city": "Chatham", "state": "IL", "age": 27, "amountUSD": 230, "date": "2025-09-23" },
+      { "name": "Noah Bates", "city": "Springfield", "state": "IL", "age": 36, "amountUSD": 215, "date": "2025-09-25" },
+      { "name": "Olivia Jenkins", "city": "Leland Grove", "state": "IL", "age": 30, "amountUSD": 245, "date": "2025-09-27" },
+
+      { "name": "Parker Ellis", "city": "Rochester", "state": "IL", "age": 47, "amountUSD": 225, "date": "2025-10-04" },
+      { "name": "Quinn Harper", "city": "Springfield", "state": "IL", "age": 29, "amountUSD": 260, "date": "2025-10-06" },
+      { "name": "Riley Dawson", "city": "Chatham", "state": "IL", "age": 34, "amountUSD": 215, "date": "2025-10-09" },
+      { "name": "Sofia Ramirez", "city": "Leland Grove", "state": "IL", "age": 41, "amountUSD": 235, "date": "2025-10-14" },
+      { "name": "Tyler Grant", "city": "Springfield", "state": "IL", "age": 45, "amountUSD": 220, "date": "2025-10-19" },
+      { "name": "Uma Shah", "city": "Riverton", "state": "IL", "age": 33, "amountUSD": 250, "date": "2025-10-24" },
+      { "name": "Vera Blake", "city": "Rochester", "state": "IL", "age": 52, "amountUSD": 230, "date": "2025-10-29" },
+      { "name": "Will Foster", "city": "Springfield", "state": "IL", "age": 38, "amountUSD": 255, "date": "2025-10-30" },
+
+      { "name": "Xavier Moore", "city": "Springfield", "state": "IL", "age": 44, "amountUSD": 265, "date": "2025-11-02" },
+      { "name": "Yvette Collins", "city": "Chatham", "state": "IL", "age": 35, "amountUSD": 245, "date": "2025-11-05" },
+      { "name": "Zoe Allen", "city": "Springfield", "state": "IL", "age": 28, "amountUSD": 275, "date": "2025-11-06" },
+      { "name": "Alan Rivera", "city": "Sherman", "state": "IL", "age": 49, "amountUSD": 260, "date": "2025-11-10" },
+      { "name": "Bella Carter", "city": "Springfield", "state": "IL", "age": 31, "amountUSD": 285, "date": "2025-11-12" },
+      { "name": "Carlos Mendoza", "city": "Riverton", "state": "IL", "age": 46, "amountUSD": 270, "date": "2025-11-15" },
+      { "name": "Diana Prince", "city": "Springfield", "state": "IL", "age": 41, "amountUSD": 295, "date": "2025-11-18" },
+      { "name": "Eli Thompson", "city": "Springfield", "state": "IL", "age": 33, "amountUSD": 305, "date": "2025-11-20" },
+      { "name": "Felicity Ward", "city": "Chatham", "state": "IL", "age": 36, "amountUSD": 300, "date": "2025-11-22" },
+      { "name": "Gavin Ross", "city": "Springfield", "state": "IL", "age": 42, "amountUSD": 315, "date": "2025-11-24" },
+      { "name": "Hector Alvarez", "city": "Leland Grove", "state": "IL", "age": 47, "amountUSD": 325, "date": "2025-11-25" },
+      { "name": "Ivy Monroe", "city": "Springfield", "state": "IL", "age": 34, "amountUSD": 340, "date": "2025-11-26" },
+      { "name": "Jordan Blake", "city": "Springfield", "state": "IL", "age": 29, "amountUSD": 355, "date": "2025-11-27" },
+      { "name": "Kelsey Ford", "city": "Rochester", "state": "IL", "age": 39, "amountUSD": 330, "date": "2025-11-28" },
+      { "name": "Luis Ortega", "city": "Springfield", "state": "IL", "age": 50, "amountUSD": 360, "date": "2025-11-29" }
+      ],
+      "volunteerCountsByMonth": [
+      { "month": "2025-04", "count": 14 },
+      { "month": "2025-05", "count": 18 },
+      { "month": "2025-06", "count": 22 },
+      { "month": "2025-07", "count": 27 },
+      { "month": "2025-08", "count": 33 },
+      { "month": "2025-09", "count": 38 },
+      { "month": "2025-10", "count": 45 },
+      { "month": "2025-11", "count": 55 }
+      ],
+      "events": [
+      { "date": "2025-04-08", "type": "Community Safety Forum", "city": "Springfield", "state": "IL", "attendees": 140 },
+      { "date": "2025-04-20", "type": "Neighborhood Night Out", "city": "Springfield", "state": "IL", "attendees": 130 },
+
+      { "date": "2025-05-05", "type": "Canvass Launch", "city": "Chatham", "state": "IL", "attendees": 85 },
+      { "date": "2025-05-18", "type": "Infrastructure Listening Session", "city": "Springfield", "state": "IL", "attendees": 110 },
+
+      { "date": "2025-06-07", "type": "Budget Transparency Workshop", "city": "Rochester", "state": "IL", "attendees": 70 },
+      { "date": "2025-06-22", "type": "Small Business Walk", "city": "Springfield", "state": "IL", "attendees": 95 },
+
+      { "date": "2025-07-03", "type": "Riverfront Fundraiser", "city": "Sherman", "state": "IL", "attendees": 105 },
+      { "date": "2025-07-19", "type": "Phone Bank Blitz", "city": "Springfield", "state": "IL", "attendees": 45 },
+
+      { "date": "2025-08-10", "type": "Community Cleanup", "city": "Leland Grove", "state": "IL", "attendees": 120 },
+      { "date": "2025-08-24", "type": "Transit Town Hall", "city": "Riverton", "state": "IL", "attendees": 90 },
+
+      { "date": "2025-09-09", "type": "Back-to-School Rally", "city": "Springfield", "state": "IL", "attendees": 150 },
+      { "date": "2025-09-23", "type": "Public Safety Tech Demo", "city": "Springfield", "state": "IL", "attendees": 100 },
+
+      { "date": "2025-10-04", "type": "Harvest Meet & Greet", "city": "Springfield", "state": "IL", "attendees": 180 },
+      { "date": "2025-10-18", "type": "Debate Watch Party", "city": "Springfield", "state": "IL", "attendees": 165 },
+
+      { "date": "2025-11-02", "type": "Early Vote Kickoff", "city": "Springfield", "state": "IL", "attendees": 210 },
+      { "date": "2025-11-16", "type": "Volunteer Appreciation Brunch", "city": "Chatham", "state": "IL", "attendees": 95 },
+      { "date": "2025-11-23", "type": "Final Weekend Rally", "city": "Springfield", "state": "IL", "attendees": 260 }
+      ]
+    }
+  },
+  {
+    "id": "c1e7f2a8-4a2b-4b61-8d4e-7f6e9b1a0002",
+    "slug": "miguel-alvarez",
+    "name": "Miguel Alvarez",
+    "photoUrl": "/profiles/profile-miguel-alvarez-min.png",
+    "office": "City Council District 4",
+    "party": "Independent",
+    "slogan": "Neighborhoods first.",
+    "issues": [
+      {
+        "slug": "housing-affordability",
+        "title": "Housing Affordability",
+        "summary": "Promote mixed-income housing, reduce permitting friction, and protect renters."
+      },
+      {
+        "slug": "small-business",
+        "title": "Small Business",
+        "summary": "Streamline licensing, expand micro-grants, and activate underused storefronts."
+      },
+      {
+        "slug": "cleaner-streets",
+        "title": "Cleaner Streets",
+        "summary": "Improve trash pickup, add lighting, and coordinate community cleanups."
+      },
+      {
+        "slug": "public-safety",
+        "title": "Public Safety",
+        "summary": "Hire community officers, expand crisis response, and strengthen neighborhood partnerships."
+      },
+      {
+        "slug": "infrastructure",
+        "title": "Infrastructure",
+        "summary": "Fix roads and bridges, modernize water systems, and improve transit reliability."
+      },
+      {
+        "slug": "fiscal-responsibility",
+        "title": "Fiscal Responsibility",
+        "summary": "Balanced budgets, transparent spending, and performance-based contracting."
+      }
+    ],
+    "metrics": {
+      "donations": [
+      { "name": "Adriana Cruz", "city": "Austin", "state": "TX", "age": 33, "amountUSD": 160, "date": "2025-04-04" },
+      { "name": "Ben Carter", "city": "Pflugerville", "state": "TX", "age": 48, "amountUSD": 135, "date": "2025-04-07" },
+      { "name": "Carmen Diaz", "city": "Austin", "state": "TX", "age": 31, "amountUSD": 155, "date": "2025-04-11" },
+      { "name": "Diego Morales", "city": "Round Rock", "state": "TX", "age": 36, "amountUSD": 120, "date": "2025-04-18" },
+      { "name": "Elena Ramirez", "city": "Cedar Park", "state": "TX", "age": 39, "amountUSD": 165, "date": "2025-04-22" },
+      { "name": "Felix Andrade", "city": "Austin", "state": "TX", "age": 40, "amountUSD": 150, "date": "2025-04-26" },
+
+      { "name": "Hector Lopez", "city": "Manor", "state": "TX", "age": 52, "amountUSD": 130, "date": "2025-05-07" },
+      { "name": "Ivy Chen", "city": "Austin", "state": "TX", "age": 29, "amountUSD": 155, "date": "2025-05-12" },
+      { "name": "Jorge Castillo", "city": "Round Rock", "state": "TX", "age": 41, "amountUSD": 140, "date": "2025-05-17" },
+      { "name": "Kara Singh", "city": "Pflugerville", "state": "TX", "age": 35, "amountUSD": 175, "date": "2025-05-22" },
+      { "name": "Lena Ortiz", "city": "Austin", "state": "TX", "age": 27, "amountUSD": 145, "date": "2025-05-28" },
+      { "name": "Mateo Alvarez", "city": "Austin", "state": "TX", "age": 32, "amountUSD": 180, "date": "2025-05-30" },
+
+      { "name": "Marco Vega", "city": "Austin", "state": "TX", "age": 46, "amountUSD": 180, "date": "2025-06-02" },
+      { "name": "Natalia Ruiz", "city": "Cedar Park", "state": "TX", "age": 34, "amountUSD": 145, "date": "2025-06-07" },
+      { "name": "Orlando Reyes", "city": "Austin", "state": "TX", "age": 38, "amountUSD": 150, "date": "2025-06-12" },
+      { "name": "Patricia Vega", "city": "Austin", "state": "TX", "age": 37, "amountUSD": 160, "date": "2025-06-18" },
+      { "name": "Quinn Wright", "city": "Manor", "state": "TX", "age": 37, "amountUSD": 185, "date": "2025-06-23" },
+      { "name": "Rita Flores", "city": "Austin", "state": "TX", "age": 31, "amountUSD": 150, "date": "2025-06-28" },
+
+      { "name": "Sofia Rivera", "city": "Austin", "state": "TX", "age": 34, "amountUSD": 190, "date": "2025-07-04" },
+      { "name": "Tomas Ortiz", "city": "Round Rock", "state": "TX", "age": 49, "amountUSD": 150, "date": "2025-07-08" },
+      { "name": "Uriel Gomez", "city": "Pflugerville", "state": "TX", "age": 36, "amountUSD": 165, "date": "2025-07-13" },
+      { "name": "Valeria Cruz", "city": "Austin", "state": "TX", "age": 30, "amountUSD": 140, "date": "2025-07-18" },
+      { "name": "Wyatt Baker", "city": "Cedar Park", "state": "TX", "age": 45, "amountUSD": 195, "date": "2025-07-23" },
+      { "name": "Ximena Lopez", "city": "Austin", "state": "TX", "age": 28, "amountUSD": 155, "date": "2025-07-28" },
+
+      { "name": "Beatriz Molina", "city": "Austin", "state": "TX", "age": 33, "amountUSD": 160, "date": "2025-08-05" },
+      { "name": "Alejandro Ruiz", "city": "Austin", "state": "TX", "age": 29, "amountUSD": 175, "date": "2025-08-14" },
+      { "name": "Bianca Ortiz", "city": "Pflugerville", "state": "TX", "age": 27, "amountUSD": 145, "date": "2025-08-19" },
+      { "name": "Carlos Mendoza", "city": "Round Rock", "state": "TX", "age": 42, "amountUSD": 185, "date": "2025-08-24" },
+      { "name": "Erik Salinas", "city": "Austin", "state": "TX", "age": 35, "amountUSD": 190, "date": "2025-08-26" },
+      { "name": "Daniela Chavez", "city": "Austin", "state": "TX", "age": 31, "amountUSD": 160, "date": "2025-08-29" },
+
+      { "name": "Eduardo Morales", "city": "Austin", "state": "TX", "age": 44, "amountUSD": 210, "date": "2025-09-06" },
+      { "name": "Fernanda Reyes", "city": "Cedar Park", "state": "TX", "age": 38, "amountUSD": 165, "date": "2025-09-11" },
+      { "name": "Gabriel Soto", "city": "Austin", "state": "TX", "age": 40, "amountUSD": 175, "date": "2025-09-14" },
+      { "name": "Giselle Ramos", "city": "Austin", "state": "TX", "age": 26, "amountUSD": 185, "date": "2025-09-16" },
+      { "name": "Hugo Castillo", "city": "Manor", "state": "TX", "age": 41, "amountUSD": 150, "date": "2025-09-21" },
+      { "name": "Ismael Torres", "city": "Round Rock", "state": "TX", "age": 36, "amountUSD": 195, "date": "2025-09-26" },
+      { "name": "Julieta Navarro", "city": "Austin", "state": "TX", "age": 33, "amountUSD": 170, "date": "2025-09-30" },
+
+      { "name": "Karina Silva", "city": "Austin", "state": "TX", "age": 35, "amountUSD": 215, "date": "2025-10-04" },
+      { "name": "Luis Herrera", "city": "Pflugerville", "state": "TX", "age": 39, "amountUSD": 170, "date": "2025-10-09" },
+      { "name": "Marisol Perez", "city": "Austin", "state": "TX", "age": 32, "amountUSD": 205, "date": "2025-10-12" },
+      { "name": "Nadia Herrera", "city": "Austin", "state": "TX", "age": 37, "amountUSD": 225, "date": "2025-10-18" },
+      { "name": "Olga Fernandez", "city": "Austin", "state": "TX", "age": 46, "amountUSD": 205, "date": "2025-10-24" },
+      { "name": "Pedro Alvarez", "city": "Austin", "state": "TX", "age": 43, "amountUSD": 235, "date": "2025-10-27" },
+      { "name": "Pablo Jimenez", "city": "Round Rock", "state": "TX", "age": 43, "amountUSD": 180, "date": "2025-10-29" },
+
+      { "name": "Raul Dominguez", "city": "Austin", "state": "TX", "age": 47, "amountUSD": 220, "date": "2025-11-05" },
+      { "name": "Selena Cruz", "city": "Austin", "state": "TX", "age": 30, "amountUSD": 230, "date": "2025-11-10" },
+      { "name": "Tadeo Mendoza", "city": "Pflugerville", "state": "TX", "age": 42, "amountUSD": 245, "date": "2025-11-16" },
+      { "name": "Ulises Gomez", "city": "Pflugerville", "state": "TX", "age": 42, "amountUSD": 165, "date": "2025-11-20" },
+      { "name": "Violeta Ramos", "city": "Austin", "state": "TX", "age": 36, "amountUSD": 210, "date": "2025-11-25" },
+      { "name": "Xavier Delgado", "city": "Austin", "state": "TX", "age": 44, "amountUSD": 260, "date": "2025-11-27" },
+      { "name": "Wilmer Castillo", "city": "Round Rock", "state": "TX", "age": 45, "amountUSD": 185, "date": "2025-11-29" },
+      { "name": "Yolanda Serrano", "city": "Austin", "state": "TX", "age": 41, "amountUSD": 275, "date": "2025-11-30" }
+      ],
+      "volunteerCountsByMonth": [
+      { "month": "2025-04", "count": 10 },
+      { "month": "2025-05", "count": 13 },
+      { "month": "2025-06", "count": 16 },
+      { "month": "2025-07", "count": 20 },
+      { "month": "2025-08", "count": 25 },
+      { "month": "2025-09", "count": 31 },
+      { "month": "2025-10", "count": 38 },
+      { "month": "2025-11", "count": 46 }
+      ],
+      "events": [
+      { "date": "2025-04-06", "type": "Neighborhood Walk", "city": "Austin", "state": "TX", "attendees": 45 },
+      { "date": "2025-05-03", "type": "Small Business Roundtable", "city": "Austin", "state": "TX", "attendees": 32 },
+      { "date": "2025-05-18", "type": "Town Hall", "city": "Pflugerville", "state": "TX", "attendees": 85 },
+      { "date": "2025-06-07", "type": "Community Cleanup", "city": "Austin", "state": "TX", "attendees": 65 },
+      { "date": "2025-06-21", "type": "Transit Listening Session", "city": "Round Rock", "state": "TX", "attendees": 58 },
+      { "date": "2025-07-09", "type": "Meet & Greet", "city": "Austin", "state": "TX", "attendees": 60 },
+      { "date": "2025-08-08", "type": "Policy Chat", "city": "Manor", "state": "TX", "attendees": 36 },
+      { "date": "2025-08-23", "type": "Back-to-School Fair", "city": "Austin", "state": "TX", "attendees": 90 },
+      { "date": "2025-09-05", "type": "Volunteer Rally", "city": "Austin", "state": "TX", "attendees": 70 },
+      { "date": "2025-09-19", "type": "Housing Forum", "city": "Austin", "state": "TX", "attendees": 95 },
+      { "date": "2025-10-18", "type": "Debate Watch Party", "city": "Austin", "state": "TX", "attendees": 140 },
+      { "date": "2025-11-02", "type": "Early Vote Kickoff", "city": "Austin", "state": "TX", "attendees": 150 },
+      { "date": "2025-11-16", "type": "Volunteer Appreciation Picnic", "city": "Pflugerville", "state": "TX", "attendees": 110 }
+      ]
+    }
+  },
+  {
+    "id": "c1e7f2a8-4a2b-4b61-8d4e-7f6e9b1a0003",
+    "slug": "priya-shah",
+    "name": "Priya Shah",
+    "photoUrl": "/profiles/profile-priya-shah-min.png",
+    "office": "State Senate District 22",
+    "party": "Democrat",
+    "slogan": "Opportunity for every family.",
+    "issues": [
+      {
+        "slug": "education",
+        "title": "Education",
+        "summary": "Raise teacher pay, expand career pathways, and fully fund early learning."
+      },
+      {
+        "slug": "healthcare",
+        "title": "Healthcare",
+        "summary": "Lower prescription costs and expand access to community clinics."
+      },
+      {
+        "slug": "climate",
+        "title": "Climate & Resilience",
+        "summary": "Invest in clean energy jobs and strengthen wildfire/flood preparedness."
+      },
+      {
+        "slug": "economy-and-jobs",
+        "title": "Economy & Jobs",
+        "summary": "Support small manufacturers, reduce red tape, and expand skills training."
+      },
+      {
+        "slug": "infrastructure",
+        "title": "Infrastructure",
+        "summary": "Fix roads and bridges, modernize water systems, and improve transit reliability."
+      },
+      {
+        "slug": "public-safety",
+        "title": "Public Safety",
+        "summary": "Fund local enforcement partnerships and modernize technology and training."
+      }
+    ],
+    "metrics": {
+      "donations": [
+      { "name": "Anika Patel", "city": "San Jose", "state": "CA", "age": 29, "amountUSD": 245, "date": "2025-04-05" },
+      { "name": "Brian O'Neill", "city": "Santa Clara", "state": "CA", "age": 42, "amountUSD": 255, "date": "2025-04-09" },
+      { "name": "Caroline Wu", "city": "Sunnyvale", "state": "CA", "age": 34, "amountUSD": 265, "date": "2025-04-14" },
+      { "name": "Darius Green", "city": "Milpitas", "state": "CA", "age": 47, "amountUSD": 280, "date": "2025-04-20" },
+      { "name": "Elena Rossi", "city": "Mountain View", "state": "CA", "age": 38, "amountUSD": 295, "date": "2025-04-24" },
+      { "name": "Farhan Malik", "city": "San Jose", "state": "CA", "age": 36, "amountUSD": 305, "date": "2025-04-28" },
+
+      { "name": "Grace Kim", "city": "Cupertino", "state": "CA", "age": 31, "amountUSD": 270, "date": "2025-05-04" },
+      { "name": "Hector Lopez", "city": "San Jose", "state": "CA", "age": 44, "amountUSD": 310, "date": "2025-05-08" },
+      { "name": "Isabella Nguyen", "city": "Sunnyvale", "state": "CA", "age": 27, "amountUSD": 285, "date": "2025-05-12" },
+      { "name": "Jorge Ramirez", "city": "Santa Clara", "state": "CA", "age": 40, "amountUSD": 320, "date": "2025-05-17" },
+      { "name": "Kavya Shah", "city": "Milpitas", "state": "CA", "age": 33, "amountUSD": 300, "date": "2025-05-21" },
+      { "name": "Lydia Chen", "city": "Mountain View", "state": "CA", "age": 37, "amountUSD": 330, "date": "2025-05-24" },
+      { "name": "Marcus Allen", "city": "San Jose", "state": "CA", "age": 52, "amountUSD": 340, "date": "2025-05-27" },
+      { "name": "Nina Park", "city": "Sunnyvale", "state": "CA", "age": 35, "amountUSD": 315, "date": "2025-05-30" },
+
+      { "name": "Omar Siddiqui", "city": "San Jose", "state": "CA", "age": 41, "amountUSD": 325, "date": "2025-06-03" },
+      { "name": "Priya Verma", "city": "Santa Clara", "state": "CA", "age": 30, "amountUSD": 310, "date": "2025-06-07" },
+      { "name": "Quincy Harris", "city": "Sunnyvale", "state": "CA", "age": 48, "amountUSD": 335, "date": "2025-06-10" },
+      { "name": "Rafael Torres", "city": "Mountain View", "state": "CA", "age": 45, "amountUSD": 345, "date": "2025-06-15" },
+      { "name": "Sara Ibrahim", "city": "Milpitas", "state": "CA", "age": 39, "amountUSD": 320, "date": "2025-06-19" },
+      { "name": "Terry Johnson", "city": "San Jose", "state": "CA", "age": 50, "amountUSD": 350, "date": "2025-06-23" },
+      { "name": "Usha Reddy", "city": "Cupertino", "state": "CA", "age": 34, "amountUSD": 330, "date": "2025-06-26" },
+      { "name": "Victor Chen", "city": "Sunnyvale", "state": "CA", "age": 43, "amountUSD": 355, "date": "2025-06-29" },
+
+      { "name": "Wendy Morales", "city": "San Jose", "state": "CA", "age": 29, "amountUSD": 340, "date": "2025-07-04" },
+      { "name": "Xavier Patel", "city": "Santa Clara", "state": "CA", "age": 37, "amountUSD": 360, "date": "2025-07-07" },
+      { "name": "Yara Singh", "city": "Milpitas", "state": "CA", "age": 32, "amountUSD": 335, "date": "2025-07-11" },
+      { "name": "Zoe Martin", "city": "Mountain View", "state": "CA", "age": 28, "amountUSD": 345, "date": "2025-07-15" },
+      { "name": "Alan Brooks", "city": "San Jose", "state": "CA", "age": 54, "amountUSD": 370, "date": "2025-07-18" },
+      { "name": "Beatrice Lee", "city": "Cupertino", "state": "CA", "age": 40, "amountUSD": 355, "date": "2025-07-22" },
+      { "name": "Carlos Gomez", "city": "Sunnyvale", "state": "CA", "age": 46, "amountUSD": 365, "date": "2025-07-25" },
+      { "name": "Divya Kapoor", "city": "Santa Clara", "state": "CA", "age": 33, "amountUSD": 350, "date": "2025-07-28" },
+      { "name": "Elliot Park", "city": "San Jose", "state": "CA", "age": 42, "amountUSD": 380, "date": "2025-07-31" },
+
+      { "name": "Fatima Khan", "city": "San Jose", "state": "CA", "age": 36, "amountUSD": 365, "date": "2025-08-04" },
+      { "name": "George Li", "city": "Sunnyvale", "state": "CA", "age": 44, "amountUSD": 375, "date": "2025-08-07" },
+      { "name": "Hannah Brown", "city": "Mountain View", "state": "CA", "age": 31, "amountUSD": 355, "date": "2025-08-10" },
+      { "name": "Isaac Feld", "city": "Milpitas", "state": "CA", "age": 39, "amountUSD": 360, "date": "2025-08-14" },
+      { "name": "Jin Park", "city": "San Jose", "state": "CA", "age": 27, "amountUSD": 345, "date": "2025-08-17" },
+      { "name": "Karen Wu", "city": "Santa Clara", "state": "CA", "age": 35, "amountUSD": 385, "date": "2025-08-20" },
+      { "name": "Liam O'Brien", "city": "Cupertino", "state": "CA", "age": 41, "amountUSD": 395, "date": "2025-08-24" },
+      { "name": "Maya Desai", "city": "Sunnyvale", "state": "CA", "age": 34, "amountUSD": 370, "date": "2025-08-27" },
+      { "name": "Noah Patel", "city": "San Jose", "state": "CA", "age": 48, "amountUSD": 400, "date": "2025-08-30" },
+
+      { "name": "Olivia Stone", "city": "San Jose", "state": "CA", "age": 30, "amountUSD": 390, "date": "2025-09-04" },
+      { "name": "Paul Nguyen", "city": "Santa Clara", "state": "CA", "age": 38, "amountUSD": 405, "date": "2025-09-07" },
+      { "name": "Qi Zhao", "city": "Sunnyvale", "state": "CA", "age": 42, "amountUSD": 395, "date": "2025-09-10" },
+      { "name": "Rohit Sinha", "city": "Milpitas", "state": "CA", "age": 37, "amountUSD": 410, "date": "2025-09-13" },
+      { "name": "Sophia Allen", "city": "Mountain View", "state": "CA", "age": 33, "amountUSD": 385, "date": "2025-09-16" },
+      { "name": "Thomas Green", "city": "San Jose", "state": "CA", "age": 55, "amountUSD": 420, "date": "2025-09-19" },
+      { "name": "Uma Chawla", "city": "Cupertino", "state": "CA", "age": 29, "amountUSD": 375, "date": "2025-09-22" },
+      { "name": "Victor Huang", "city": "Sunnyvale", "state": "CA", "age": 46, "amountUSD": 430, "date": "2025-09-25" },
+      { "name": "Warren Lee", "city": "San Jose", "state": "CA", "age": 52, "amountUSD": 445, "date": "2025-09-28" },
+      { "name": "Xia Li", "city": "Santa Clara", "state": "CA", "age": 36, "amountUSD": 415, "date": "2025-09-30" },
+
+      { "name": "Yusuf Khan", "city": "San Jose", "state": "CA", "age": 40, "amountUSD": 435, "date": "2025-10-04" },
+      { "name": "Zara Patel", "city": "Sunnyvale", "state": "CA", "age": 28, "amountUSD": 395, "date": "2025-10-07" },
+      { "name": "Alice Morgan", "city": "Mountain View", "state": "CA", "age": 44, "amountUSD": 440, "date": "2025-10-10" },
+      { "name": "Benito Cruz", "city": "Milpitas", "state": "CA", "age": 39, "amountUSD": 405, "date": "2025-10-13" },
+      { "name": "Clara Jung", "city": "Santa Clara", "state": "CA", "age": 31, "amountUSD": 425, "date": "2025-10-16" },
+      { "name": "Daniel Thomas", "city": "San Jose", "state": "CA", "age": 53, "amountUSD": 450, "date": "2025-10-19" },
+      { "name": "Elena Park", "city": "Cupertino", "state": "CA", "age": 35, "amountUSD": 410, "date": "2025-10-22" },
+      { "name": "Felix Zhang", "city": "Sunnyvale", "state": "CA", "age": 47, "amountUSD": 455, "date": "2025-10-25" },
+      { "name": "Gwen Taylor", "city": "San Jose", "state": "CA", "age": 42, "amountUSD": 420, "date": "2025-10-28" },
+      { "name": "Hiro Tanaka", "city": "Santa Clara", "state": "CA", "age": 45, "amountUSD": 460, "date": "2025-10-30" },
+
+      { "name": "Irene Castillo", "city": "San Jose", "state": "CA", "age": 33, "amountUSD": 440, "date": "2025-11-03" },
+      { "name": "Jarrett Cole", "city": "Milpitas", "state": "CA", "age": 50, "amountUSD": 470, "date": "2025-11-05" },
+      { "name": "Kiran Ahuja", "city": "Sunnyvale", "state": "CA", "age": 37, "amountUSD": 455, "date": "2025-11-07" },
+      { "name": "Luca Bianchi", "city": "Mountain View", "state": "CA", "age": 41, "amountUSD": 465, "date": "2025-11-09" },
+      { "name": "Maya Singh", "city": "Santa Clara", "state": "CA", "age": 29, "amountUSD": 430, "date": "2025-11-11" },
+      { "name": "Noel Brooks", "city": "San Jose", "state": "CA", "age": 56, "amountUSD": 485, "date": "2025-11-13" },
+      { "name": "Oksana Petrov", "city": "Cupertino", "state": "CA", "age": 38, "amountUSD": 445, "date": "2025-11-16" },
+      { "name": "Pranav Desai", "city": "San Jose", "state": "CA", "age": 35, "amountUSD": 455, "date": "2025-11-19" },
+      { "name": "Renee Foster", "city": "Sunnyvale", "state": "CA", "age": 46, "amountUSD": 495, "date": "2025-11-22" },
+      { "name": "Samuel Wright", "city": "San Jose", "state": "CA", "age": 48, "amountUSD": 500, "date": "2025-11-25" },
+      { "name": "Tara Gupta", "city": "Santa Clara", "state": "CA", "age": 32, "amountUSD": 470, "date": "2025-11-27" },
+      { "name": "Uma Narayan", "city": "Milpitas", "state": "CA", "age": 43, "amountUSD": 485, "date": "2025-11-29" }
+      ],
+      "volunteerCountsByMonth": [
+      { "month": "2025-04", "count": 16 },
+      { "month": "2025-05", "count": 19 },
+      { "month": "2025-06", "count": 24 },
+      { "month": "2025-07", "count": 30 },
+      { "month": "2025-08", "count": 38 },
+      { "month": "2025-09", "count": 46 },
+      { "month": "2025-10", "count": 55 },
+      { "month": "2025-11", "count": 68 }
+      ],
+      "events": [
+      { "date": "2025-04-11", "type": "Education Listening Session", "city": "San Jose", "state": "CA", "attendees": 85 },
+      { "date": "2025-04-23", "type": "Healthcare Roundtable", "city": "Santa Clara", "state": "CA", "attendees": 95 },
+
+      { "date": "2025-05-09", "type": "Climate Policy Forum", "city": "Sunnyvale", "state": "CA", "attendees": 110 },
+      { "date": "2025-05-28", "type": "Career Pathways Workshop", "city": "Mountain View", "state": "CA", "attendees": 125 },
+
+      { "date": "2025-06-07", "type": "Community Broadband Summit", "city": "Milpitas", "state": "CA", "attendees": 130 },
+      { "date": "2025-06-21", "type": "Early Learning Expo", "city": "San Jose", "state": "CA", "attendees": 145 },
+
+      { "date": "2025-07-06", "type": "Clean Energy Town Hall", "city": "Cupertino", "state": "CA", "attendees": 160 },
+      { "date": "2025-07-24", "type": "Health Access Fair", "city": "Santa Clara", "state": "CA", "attendees": 175 },
+
+      { "date": "2025-08-05", "type": "Teacher Support Rally", "city": "San Jose", "state": "CA", "attendees": 190 },
+      { "date": "2025-08-22", "type": "Small Biz & Workforce Forum", "city": "Sunnyvale", "state": "CA", "attendees": 205 },
+
+      { "date": "2025-09-04", "type": "STEM Apprenticeship Night", "city": "Mountain View", "state": "CA", "attendees": 225 },
+      { "date": "2025-09-18", "type": "Wildfire Resilience Briefing", "city": "San Jose", "state": "CA", "attendees": 240 },
+
+      { "date": "2025-10-03", "type": "Regional Transit Forum", "city": "Santa Clara", "state": "CA", "attendees": 260 },
+      { "date": "2025-10-19", "type": "Youth Leadership Summit", "city": "Cupertino", "state": "CA", "attendees": 280 },
+
+      { "date": "2025-11-02", "type": "Early Vote Kickoff", "city": "San Jose", "state": "CA", "attendees": 310 },
+      { "date": "2025-11-16", "type": "Volunteer Appreciation Night", "city": "Sunnyvale", "state": "CA", "attendees": 195 },
+      { "date": "2025-11-24", "type": "Final Get-Out-The-Vote Rally", "city": "San Jose", "state": "CA", "attendees": 360 }
+      ]
+    }
+    },
+  {
+    "id": "c1e7f2a8-4a2b-4b61-8d4e-7f6e9b1a0004",
+    "slug": "david-kim",
+    "name": "David Kim",
+    "photoUrl": "/profiles/profile-david-kim-min.png",
+    "office": "U.S. House, 7th District",
+    "party": "Republican",
+    "slogan": "Results, not rhetoric.",
+    "issues": [
+      {
+        "slug": "economy-and-jobs",
+        "title": "Economy & Jobs",
+        "summary": "Support small manufacturers, reduce red tape, and expand skills training."
+      },
+      {
+        "slug": "public-safety",
+        "title": "Public Safety",
+        "summary": "Fund local enforcement partnerships and modernize technology and training."
+      },
+      {
+        "slug": "infrastructure",
+        "title": "Infrastructure",
+        "summary": "Modernize highways and broadband with transparent project delivery."
+      },
+      {
+        "slug": "education",
+        "title": "Education",
+        "summary": "Raise teacher pay, expand career pathways, and fully fund early learning."
+      },
+      {
+        "slug": "healthcare",
+        "title": "Healthcare",
+        "summary": "Lower prescription costs and expand access to community clinics."
+      },
+      {
+        "slug": "climate",
+        "title": "Climate & Resilience",
+        "summary": "Invest in clean energy jobs and strengthen wildfire/flood preparedness."
+      }
+    ],
+    "metrics": {
+      "donations": [
+      { "name": "Aaron Wright", "city": "Seattle", "state": "WA", "age": 44, "amountUSD": 360, "date": "2025-04-06" },
+      { "name": "Bianca Lopez", "city": "Shoreline", "state": "WA", "age": 37, "amountUSD": 300, "date": "2025-04-10" },
+      { "name": "Caleb Johnson", "city": "Seattle", "state": "WA", "age": 52, "amountUSD": 340, "date": "2025-04-15" },
+      { "name": "Daisy Lin", "city": "Burien", "state": "WA", "age": 31, "amountUSD": 280, "date": "2025-04-20" },
+      { "name": "Fiona Park", "city": "Edmonds", "state": "WA", "age": 42, "amountUSD": 295, "date": "2025-04-29" },
+
+      { "name": "Gabe Thompson", "city": "Seattle", "state": "WA", "age": 47, "amountUSD": 365, "date": "2025-05-04" },
+      { "name": "Hyejin Choi", "city": "Seattle", "state": "WA", "age": 28, "amountUSD": 285, "date": "2025-05-08" },
+      { "name": "Isaac Morales", "city": "Shoreline", "state": "WA", "age": 39, "amountUSD": 345, "date": "2025-05-13" },
+      { "name": "Jin Park", "city": "Seattle", "state": "WA", "age": 33, "amountUSD": 305, "date": "2025-05-18" },
+      { "name": "Kara Middleton", "city": "Seattle", "state": "WA", "age": 45, "amountUSD": 355, "date": "2025-05-22" },
+      { "name": "Liam Porter", "city": "Burien", "state": "WA", "age": 40, "amountUSD": 315, "date": "2025-05-28" },
+
+      { "name": "Mina Cho", "city": "Seattle", "state": "WA", "age": 38, "amountUSD": 370, "date": "2025-06-03" },
+      { "name": "Noelle Kim", "city": "Edmonds", "state": "WA", "age": 41, "amountUSD": 300, "date": "2025-06-08" },
+      { "name": "Omar Vargas", "city": "Seattle", "state": "WA", "age": 46, "amountUSD": 350, "date": "2025-06-13" },
+      { "name": "Paula Nguyen", "city": "Seattle", "state": "WA", "age": 27, "amountUSD": 290, "date": "2025-06-18" },
+      { "name": "Quincy Allen", "city": "Shoreline", "state": "WA", "age": 36, "amountUSD": 380, "date": "2025-06-23" },
+      { "name": "Renee Baker", "city": "Seattle", "state": "WA", "age": 50, "amountUSD": 305, "date": "2025-06-28" },
+
+      { "name": "Sung Lee", "city": "Seattle", "state": "WA", "age": 34, "amountUSD": 360, "date": "2025-07-04" },
+      { "name": "Theo Ramirez", "city": "Seattle", "state": "WA", "age": 32, "amountUSD": 295, "date": "2025-07-09" },
+      { "name": "Uma Patel", "city": "Burien", "state": "WA", "age": 39, "amountUSD": 325, "date": "2025-07-14" },
+      { "name": "Victor Nguyen", "city": "Shoreline", "state": "WA", "age": 47, "amountUSD": 355, "date": "2025-07-19" },
+      { "name": "Wendy Sanders", "city": "Seattle", "state": "WA", "age": 28, "amountUSD": 285, "date": "2025-07-24" },
+      { "name": "Xavier Torres", "city": "Seattle", "state": "WA", "age": 43, "amountUSD": 365, "date": "2025-07-29" },
+
+      { "name": "Yvonne Chen", "city": "Seattle", "state": "WA", "age": 40, "amountUSD": 375, "date": "2025-08-05" },
+      { "name": "Zachary Brooks", "city": "Shoreline", "state": "WA", "age": 38, "amountUSD": 305, "date": "2025-08-10" },
+      { "name": "Abigail Stone", "city": "Seattle", "state": "WA", "age": 33, "amountUSD": 335, "date": "2025-08-15" },
+      { "name": "Brandon Lee", "city": "Burien", "state": "WA", "age": 44, "amountUSD": 295, "date": "2025-08-20" },
+      { "name": "Carmen Ortiz", "city": "Seattle", "state": "WA", "age": 36, "amountUSD": 360, "date": "2025-08-25" },
+      { "name": "Elliot Park", "city": "Seattle", "state": "WA", "age": 37, "amountUSD": 365, "date": "2025-08-26" },
+      { "name": "Daniel Park", "city": "Edmonds", "state": "WA", "age": 42, "amountUSD": 410, "date": "2025-08-30" },
+
+      { "name": "Grace Liu", "city": "Seattle", "state": "WA", "age": 35, "amountUSD": 385, "date": "2025-09-02" },
+      { "name": "Harold Kim", "city": "Seattle", "state": "WA", "age": 48, "amountUSD": 395, "date": "2025-09-05" },
+      { "name": "Isabel Romero", "city": "Seattle", "state": "WA", "age": 29, "amountUSD": 405, "date": "2025-09-07" },
+      { "name": "Hannah Yoon", "city": "Seattle", "state": "WA", "age": 31, "amountUSD": 305, "date": "2025-09-20" },
+      { "name": "Ian Walters", "city": "Seattle", "state": "WA", "age": 37, "amountUSD": 365, "date": "2025-09-25" },
+      { "name": "Jules Harper", "city": "Seattle", "state": "WA", "age": 46, "amountUSD": 400, "date": "2025-09-30" },
+
+      { "name": "Kira Matsumoto", "city": "Seattle", "state": "WA", "age": 35, "amountUSD": 390, "date": "2025-10-04" },
+      { "name": "Logan Pierce", "city": "Shoreline", "state": "WA", "age": 42, "amountUSD": 315, "date": "2025-10-09" },
+      { "name": "Nora Ellis", "city": "Seattle", "state": "WA", "age": 33, "amountUSD": 410, "date": "2025-10-08" },
+      { "name": "Mason Ortiz", "city": "Seattle", "state": "WA", "age": 33, "amountUSD": 350, "date": "2025-10-14" },
+      { "name": "Owen Fisher", "city": "Seattle", "state": "WA", "age": 41, "amountUSD": 370, "date": "2025-10-24" },
+      { "name": "Priya Nair", "city": "Seattle", "state": "WA", "age": 34, "amountUSD": 420, "date": "2025-10-29" },
+      { "name": "Rafael Gomez", "city": "Seattle", "state": "WA", "age": 52, "amountUSD": 445, "date": "2025-10-31" },
+
+      { "name": "Quinton Reeves", "city": "Seattle", "state": "WA", "age": 38, "amountUSD": 400, "date": "2025-11-05" },
+      { "name": "Rachel Summers", "city": "Edmonds", "state": "WA", "age": 36, "amountUSD": 320, "date": "2025-11-10" },
+      { "name": "Sebastian Cole", "city": "Shoreline", "state": "WA", "age": 44, "amountUSD": 435, "date": "2025-11-12" },
+      { "name": "Tara Hughes", "city": "Burien", "state": "WA", "age": 33, "amountUSD": 305, "date": "2025-11-20" },
+      { "name": "Ulric Bennett", "city": "Seattle", "state": "WA", "age": 49, "amountUSD": 375, "date": "2025-11-25" },
+      { "name": "Vivian Cho", "city": "Seattle", "state": "WA", "age": 30, "amountUSD": 430, "date": "2025-11-29" },
+      { "name": "Wesley Tan", "city": "Seattle", "state": "WA", "age": 42, "amountUSD": 455, "date": "2025-11-30" }
+      ],
+      "volunteerCountsByMonth": [
+      { "month": "2025-04", "count": 18 },
+      { "month": "2025-05", "count": 21 },
+      { "month": "2025-06", "count": 24 },
+      { "month": "2025-07", "count": 26 },
+      { "month": "2025-08", "count": 29 },
+      { "month": "2025-09", "count": 34 },
+      { "month": "2025-10", "count": 40 },
+      { "month": "2025-11", "count": 47 }
+      ],
+      "events": [
+      { "date": "2025-04-07", "type": "Jobs & Innovation Forum", "city": "Seattle", "state": "WA", "attendees": 185 },
+      { "date": "2025-04-22", "type": "Waterfront Listening Session", "city": "Seattle", "state": "WA", "attendees": 150 },
+
+      { "date": "2025-05-18", "type": "Tech Entrepreneurs Roundtable", "city": "Seattle", "state": "WA", "attendees": 110 },
+      { "date": "2025-05-30", "type": "District Small Ports Tour", "city": "Seattle", "state": "WA", "attendees": 95 },
+
+      { "date": "2025-06-05", "type": "Rural Infrastructure Site Visit", "city": "Shoreline", "state": "WA", "attendees": 70 },
+      { "date": "2025-06-21", "type": "Veterans Phone Bank", "city": "Seattle", "state": "WA", "attendees": 55 },
+
+      { "date": "2025-07-09", "type": "Meet & Greet", "city": "Burien", "state": "WA", "attendees": 100 },
+      { "date": "2025-07-25", "type": "Small Business Crawl", "city": "Seattle", "state": "WA", "attendees": 90 },
+
+      { "date": "2025-08-12", "type": "Manufacturing Workforce Forum", "city": "Seattle", "state": "WA", "attendees": 120 },
+      { "date": "2025-08-27", "type": "Community BBQ", "city": "Edmonds", "state": "WA", "attendees": 155 },
+
+      { "date": "2025-09-04", "type": "Town Hall", "city": "Seattle", "state": "WA", "attendees": 205 },
+      { "date": "2025-09-20", "type": "Rural Broadband Summit", "city": "Shoreline", "state": "WA", "attendees": 130 },
+
+      { "date": "2025-10-08", "type": "Regional Debate Watch", "city": "Seattle", "state": "WA", "attendees": 175 },
+      { "date": "2025-10-22", "type": "Youth Apprenticeship Fair", "city": "Seattle", "state": "WA", "attendees": 165 },
+
+      { "date": "2025-11-02", "type": "Early Vote Rally", "city": "Seattle", "state": "WA", "attendees": 190 },
+      { "date": "2025-11-05", "type": "Women in Tech Fundraiser", "city": "Seattle", "state": "WA", "attendees": 140 },
+      { "date": "2025-11-15", "type": "Volunteer Gratitude Night", "city": "Seattle", "state": "WA", "attendees": 85 }
+      ]
+    }
+    },
+  {
+    "id": "c1e7f2a8-4a2b-4b61-8d4e-7f6e9b1a0005",
+    "slug": "aisha-williams",
+    "name": "Aisha Williams",
+    "photoUrl": "/profiles/profile-aisha-williams-min.png",
+    "office": "School Board At-Large",
+    "party": "Nonpartisan",
+    "slogan": "Great schools for every student.",
+    "issues": [
+      {
+        "slug": "teacher-support",
+        "title": "Teacher Support",
+        "summary": "Mentorship, planning time, and classroom resources to retain great teachers."
+      },
+      {
+        "slug": "student-achievement",
+        "title": "Student Achievement",
+        "summary": "Early literacy, tutoring, and data-informed interventions."
+      },
+      {
+        "slug": "school-safety",
+        "title": "School Safety",
+        "summary": "Safe facilities, counseling, and trusted adult partnerships."
+      },
+      {
+        "slug": "education",
+        "title": "Education",
+        "summary": "Raise teacher pay, expand career pathways, and fully fund early learning."
+      },
+      {
+        "slug": "fiscal-responsibility",
+        "title": "Fiscal Responsibility",
+        "summary": "Balanced budgets, transparent spending, and performance-based contracting."
+      },
+      {
+        "slug": "infrastructure",
+        "title": "Infrastructure",
+        "summary": "Fix roads and bridges, modernize water systems, and improve transit reliability."
+      }
+    ],
+    "metrics": {
+      "donations": [
+        { "name": "Amber Scott", "city": "Columbus", "state": "OH", "age": 26, "amountUSD": 115, "date": "2025-04-04" },
+        { "name": "Brian Ellis", "city": "Columbus", "state": "OH", "age": 52, "amountUSD": 60, "date": "2025-04-07" },
+        { "name": "Chloe Thomas", "city": "Columbus", "state": "OH", "age": 31, "amountUSD": 125, "date": "2025-04-12" },
+        { "name": "Derrick Young", "city": "Upper Arlington", "state": "OH", "age": 47, "amountUSD": 55, "date": "2025-04-18" },
+        { "name": "Elise Harper", "city": "Worthington", "state": "OH", "age": 39, "amountUSD": 130, "date": "2025-04-24" },
+        { "name": "Frankie Moore", "city": "Gahanna", "state": "OH", "age": 44, "amountUSD": 65, "date": "2025-04-29" },
+        { "name": "Gina Patel", "city": "Hilliard", "state": "OH", "age": 34, "amountUSD": 70, "date": "2025-04-30" },
+
+        { "name": "Henry Patel", "city": "Dublin", "state": "OH", "age": 41, "amountUSD": 70, "date": "2025-05-09" },
+        { "name": "Iris Johnson", "city": "Columbus", "state": "OH", "age": 36, "amountUSD": 130, "date": "2025-05-14" },
+        { "name": "Jason Miller", "city": "Westerville", "state": "OH", "age": 45, "amountUSD": 95, "date": "2025-05-18" },
+        { "name": "Kayla Brown", "city": "Columbus", "state": "OH", "age": 25, "amountUSD": 135, "date": "2025-05-24" },
+        { "name": "Logan Davis", "city": "Worthington", "state": "OH", "age": 33, "amountUSD": 75, "date": "2025-05-29" },
+        { "name": "Megan Carter", "city": "Columbus", "state": "OH", "age": 29, "amountUSD": 140, "date": "2025-05-31" },
+
+        { "name": "Olivia Martinez", "city": "Columbus", "state": "OH", "age": 27, "amountUSD": 135, "date": "2025-06-15" },
+        { "name": "Parker Hughes", "city": "Dublin", "state": "OH", "age": 37, "amountUSD": 70, "date": "2025-06-20" },
+        { "name": "Riley Morgan", "city": "Bexley", "state": "OH", "age": 40, "amountUSD": 80, "date": "2025-06-30" },
+        { "name": "Seth Walker", "city": "Hilliard", "state": "OH", "age": 42, "amountUSD": 95, "date": "2025-06-30" },
+
+        { "name": "Sophia King", "city": "Columbus", "state": "OH", "age": 34, "amountUSD": 130, "date": "2025-07-05" },
+        { "name": "Tyler Brooks", "city": "Columbus", "state": "OH", "age": 45, "amountUSD": 75, "date": "2025-07-10" },
+        { "name": "Uma Thompson", "city": "Worthington", "state": "OH", "age": 32, "amountUSD": 115, "date": "2025-07-15" },
+        { "name": "Victor Cruz", "city": "Dublin", "state": "OH", "age": 40, "amountUSD": 85, "date": "2025-07-20" },
+        { "name": "Wendy King", "city": "Bexley", "state": "OH", "age": 29, "amountUSD": 145, "date": "2025-07-25" },
+        { "name": "Xavier Lewis", "city": "Columbus", "state": "OH", "age": 38, "amountUSD": 90, "date": "2025-07-30" },
+        { "name": "Yvonne Harris", "city": "Reynoldsburg", "state": "OH", "age": 43, "amountUSD": 155, "date": "2025-07-31" },
+
+        { "name": "Aiden Carter", "city": "Columbus", "state": "OH", "age": 35, "amountUSD": 120, "date": "2025-08-15" },
+        { "name": "Bella Ortiz", "city": "Bexley", "state": "OH", "age": 27, "amountUSD": 90, "date": "2025-08-20" },
+        { "name": "Carlos Ramirez", "city": "Westerville", "state": "OH", "age": 46, "amountUSD": 160, "date": "2025-08-22" },
+        { "name": "Danielle Moore", "city": "Columbus", "state": "OH", "age": 36, "amountUSD": 95, "date": "2025-08-30" },
+        { "name": "Ethan Lewis", "city": "Columbus", "state": "OH", "age": 31, "amountUSD": 140, "date": "2025-09-05" },
+
+        { "name": "Fiona Clark", "city": "Bexley", "state": "OH", "age": 37, "amountUSD": 85, "date": "2025-09-10" },
+        { "name": "Graham Peters", "city": "Worthington", "state": "OH", "age": 44, "amountUSD": 125, "date": "2025-09-15" },
+        { "name": "Holly Simmons", "city": "Columbus", "state": "OH", "age": 33, "amountUSD": 95, "date": "2025-09-20" },
+        { "name": "Isla Bennett", "city": "Hilliard", "state": "OH", "age": 28, "amountUSD": 155, "date": "2025-09-24" },
+        { "name": "Jonah Price", "city": "Gahanna", "state": "OH", "age": 35, "amountUSD": 100, "date": "2025-09-30" },
+
+        { "name": "Kylie Morgan", "city": "Columbus", "state": "OH", "age": 28, "amountUSD": 145, "date": "2025-10-05" },
+        { "name": "Landon Fisher", "city": "Dublin", "state": "OH", "age": 39, "amountUSD": 90, "date": "2025-10-10" },
+        { "name": "Mara Diaz", "city": "Westerville", "state": "OH", "age": 41, "amountUSD": 170, "date": "2025-10-14" },
+        { "name": "Nathan Cole", "city": "Bexley", "state": "OH", "age": 41, "amountUSD": 100, "date": "2025-10-20" },
+        { "name": "Olive Harper", "city": "Columbus", "state": "OH", "age": 36, "amountUSD": 160, "date": "2025-10-25" },
+        { "name": "Paige Walker", "city": "Worthington", "state": "OH", "age": 29, "amountUSD": 105, "date": "2025-10-30" },
+        { "name": "Quincy Evans", "city": "Columbus", "state": "OH", "age": 34, "amountUSD": 150, "date": "2025-11-05" },
+        { "name": "Riley Carter", "city": "Bexley", "state": "OH", "age": 31, "amountUSD": 95, "date": "2025-11-10" },
+        { "name": "Uma Patel", "city": "Worthington", "state": "OH", "age": 29, "amountUSD": 165, "date": "2025-11-25" },
+        { "name": "Violet Hayes", "city": "Columbus", "state": "OH", "age": 37, "amountUSD": 110, "date": "2025-11-29" },
+        { "name": "Will Grant", "city": "Reynoldsburg", "state": "OH", "age": 48, "amountUSD": 175, "date": "2025-11-30" }
+      ],
+      "volunteerCountsByMonth": [
+        { "month": "2025-04", "count": 12 },
+        { "month": "2025-05", "count": 13 },
+        { "month": "2025-06", "count": 15 },
+        { "month": "2025-07", "count": 18 },
+        { "month": "2025-08", "count": 24 },
+        { "month": "2025-09", "count": 32 },
+        { "month": "2025-10", "count": 45 },
+        { "month": "2025-11", "count": 61 }
+      ],
+      "events": [
+        { "date": "2025-04-07", "type": "School Forum", "city": "Columbus", "state": "OH", "attendees": 95 },
+        { "date": "2025-04-21", "type": "Teacher Listening Session", "city": "Bexley", "state": "OH", "attendees": 60 },
+        { "date": "2025-05-05", "type": "Parent Listening Session", "city": "Bexley", "state": "OH", "attendees": 58 },
+        { "date": "2025-05-19", "type": "Meet & Greet", "city": "Worthington", "state": "OH", "attendees": 65 },
+        { "date": "2025-06-12", "type": "Early Literacy Roundtable", "city": "Columbus", "state": "OH", "attendees": 70 },
+        { "date": "2025-06-23", "type": "Phone Bank", "city": "Gahanna", "state": "OH", "attendees": 40 },
+        { "date": "2025-07-11", "type": "Policy Discussion", "city": "Dublin", "state": "OH", "attendees": 55 },
+        { "date": "2025-07-25", "type": "STEM Camp Visit", "city": "Columbus", "state": "OH", "attendees": 85 },
+        { "date": "2025-08-08", "type": "Town Hall", "city": "Columbus", "state": "OH", "attendees": 125 },
+        { "date": "2025-08-26", "type": "Teacher Resource Drive", "city": "Hilliard", "state": "OH", "attendees": 105 },
+        { "date": "2025-09-06", "type": "Volunteer Rally", "city": "Columbus", "state": "OH", "attendees": 100 },
+        { "date": "2025-09-20", "type": "Student Success Workshop", "city": "Worthington", "state": "OH", "attendees": 80 },
+        { "date": "2025-10-05", "type": "Parent Workshop", "city": "Upper Arlington", "state": "OH", "attendees": 65 },
+        { "date": "2025-10-12", "type": "Safety & Wellness Night", "city": "Westerville", "state": "OH", "attendees": 95 },
+        { "date": "2025-10-19", "type": "Education Fair", "city": "Gahanna", "state": "OH", "attendees": 115 },
+        { "date": "2025-11-03", "type": "Early Vote Phone Bank", "city": "Columbus", "state": "OH", "attendees": 75 },
+        { "date": "2025-11-16", "type": "Get-Out-The-Vote Canvass Launch", "city": "Columbus", "state": "OH", "attendees": 140 },
+        { "date": "2025-11-24", "type": "Final Weekend Rally", "city": "Columbus", "state": "OH", "attendees": 185 }
+      ]
+    }
+  }
+]
