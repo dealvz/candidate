@@ -38,7 +38,8 @@ Create a `.env.local` file by copying `.env.example` and filling in the values t
 | Variable | Required | Description |
 | --- | --- | --- |
 | `OPENROUTER_API_KEY` | Required | API key used to authenticate with OpenRouter when requesting AI-generated summaries or insights. |
-| `OPENROUTER_MODEL` | Optional | Identifier of the OpenRouter model to call (for example `google/gemini-2.5-flash`). |
+| `OPENROUTER_REASONING_MODEL` | Optional | Identifier of the OpenRouter reasoning model used when generating campaign metric deep dives. |
+| `OPENROUTER_CLASSIFICATION_MODEL` | Optional | Identifier of the OpenRouter model used to classify and summarize key-issue articles. |
 
 When deploying, ensure any secret values are configured through your hosting provider’s environment settings rather than committed to the repository.
 

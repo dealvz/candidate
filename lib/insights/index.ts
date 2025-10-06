@@ -1,6 +1,6 @@
 import "server-only";
 import { generateObject, generateText } from "ai";
-import { openrouter, MODEL_ID } from "./provider";
+import { openrouter, REASONING_MODEL_ID } from "./provider";
 import { deepDiveSchema } from "./schema";
 import type { ExpandedMetrics } from "@/lib/types";
 import type { DeepDiveCategory, DeepDiveResponse } from "./types";
@@ -206,13 +206,13 @@ export async function generateDeepDiveLLM(
 
   try {
     const firstPass = await generateText({
-      model: openrouter(MODEL_ID),
+      model: openrouter(REASONING_MODEL_ID),
       system: deepDiveSystemPrompt,
       prompt: deepDiveUserPrompt(primaryCategory, metricsCsv),
     });
 
     const secondPass = await generateObject({
-      model: openrouter(MODEL_ID),
+      model: openrouter(REASONING_MODEL_ID),
       schema: deepDiveSchema,
       system: deepDiveRepairSystemPrompt,
       prompt: deepDiveRepairPrompt(primaryCategory, firstPass.text.trim()),

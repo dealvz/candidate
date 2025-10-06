@@ -1,6 +1,7 @@
 /**
  * Just in case we have other parts of the application that need to access this data
  */
+export const dynamic = "force-static";
 export const revalidate = 3_600; // cache this for 1h - news moves fast!
 
 import { NextResponse } from "next/server";

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { CandidateLogo } from "@/components/logo";
 import ShareMenu from "./share-menu";
 import { CandidateHeroNav } from "./candidate-hero-nav";
 import { NextCandidateLink } from "./next-candidate-link";
@@ -62,9 +63,9 @@ export function CandidateHero({ candidate, share, avgDonationUSD, nextCandidate 
 
   return (
     <div className="max-w-xl space-y-5">
-      <header className="absolute top-0 left-0 right-0 z-50 flex items-center gap-0 px-6 py-4 bg-transparent">
-        <Image src="/logo.png" alt="Candidate logo" width={32} height={32} className="h-8 w-8" priority />
-        <span className="text-3xl font-serif font-semibold tracking-tight">andidate</span>
+      <header className="absolute top-0 left-0 right-0 z-50 flex items-center gap-2 px-6 py-4 bg-transparent">
+        <CandidateLogo aria-hidden className="h-8 w-8" />
+        <span className="text-3xl font-serif font-semibold tracking-tight">Candidate</span>
       </header>
       <div className="flex items-end gap-4 sm:gap-6">
         {photoUrl && (

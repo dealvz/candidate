@@ -3,7 +3,7 @@
  * at request time and revalidate time.
  */
 
-export const revalidate = 3_200; // 1h ISR for this page path
+export const revalidate = 3_600; // 1h ISR for this page path
 
 import Image from "next/image";
 import Link from "next/link";
@@ -135,8 +135,7 @@ export default async function CandidateIssueArticlesPage({
 async function fetchIssueArticles(slug: string, issue: string): Promise<ArticleSearchResponse> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
   const response = await fetch(
-    `${baseUrl}/api/candidates/${encodeURIComponent(slug)}/key-issues/${encodeURIComponent(issue)}/articles`,
-    { next: { revalidate: 3_600 } },
+    `${baseUrl}/api/candidates/${encodeURIComponent(slug)}/key-issues/${encodeURIComponent(issue)}/articles`
   );
 
   if (response.status === 404) {

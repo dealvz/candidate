@@ -31,15 +31,6 @@ export const metadata: Metadata = {
     description: "Explore a candidate’s background, key issues, and campaign metrics at a glance.",
     images: ["/og-default.png"],
   },
-  // TODO: generate an icon
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png" }],
-  },
   robots: {
     index: true,
     follow: true,
@@ -53,7 +44,7 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "/" },
   category: "Politics",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({

@@ -4,6 +4,7 @@ export const revalidate = 60;
 
 /**
  * For this MVP we will simply re route to display the key issues of a candidate
+ * however, this would be a great spot for the ai-generated candidate summary.
  */
 export default async function CandidateIndexPage({
   params,

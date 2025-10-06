@@ -12,16 +12,41 @@ type OgFont = {
   style?: "normal" | "italic";
 };
 
-export default async function OgImage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function OgImage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const candidate = await getCandidateBySlug(slug);
+
+  if (!candidate) {
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            width: size.width,
+            height: size.height,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#0B0B0C",
+            color: "white",
+            fontSize: 48,
+            fontFamily: "system-ui",
+          }}
+        >
+          Candidate not found
+        </div>
+      ),
+      {
+        ...size,
+        status: 404,
+      }
+    );
+  }
+
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
 
-  const name = candidate?.name ?? "Candidate";
-  const office = candidate?.office ?? "";
-  const photoAbs = candidate?.photoUrl
-    ? new URL(candidate.photoUrl, baseUrl).toString()
-    : new URL("/og-fallback.jpg", baseUrl).toString();
+  const name = candidate.name;
+  const office = candidate.office;
+  const photoAbs = new URL(candidate.photoUrl, baseUrl).toString();
 
   const [geist, lora] = await Promise.all([
     fetchGoogleFont("Geist", 400),

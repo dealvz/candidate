@@ -6,7 +6,8 @@ import type { ArticleSearchResponse } from "./types";
 import { openrouter } from "@/lib/insights/provider";
 import { retryWithValidation } from "@/lib/utils";
 
-const MODEL_ID = process.env.OPENROUTER_MODEL ?? "google/gemini-2.5-flash-lite";
+const CLASSIFICATION_MODEL_ID =
+  process.env.OPENROUTER_CLASSIFICATION_MODEL ?? "google/gemini-2.5-flash-lite";
 
 const RSS_FEEDS = [
   {
@@ -38,8 +39,12 @@ const RSS_FEEDS = [
     url: "https://rss.nytimes.com/services/xml/rss/nyt/Jobs.xml",
   },
   {
-    name: "Politico",
-    url: "https://www.politico.com/rss/politicopicks.xml",
+    name: "Politico - Economy",
+    url: "http://rss.politico.com/economy.xml",
+  },
+  {
+    name: "Politico - Politics",
+    url: "https://rss.politico.com/politics-news.xml",
   },
 ] as const;
 
@@ -54,8 +59,6 @@ type CandidateArticle = {
   imageUrl: string | null;
 };
 
-type ScoredArticle = CandidateArticle & { score: number };
-
 const systemPrompt = `You are a seasoned political news editor curating coverage for a key issue. Select only from the provided articles, never invent new ones, and return valid JSON that matches the schema exactly.`;
 
 export async function fetchArticlesForIssue(issue: string): Promise<ArticleSearchResponse> {
@@ -65,15 +68,19 @@ export async function fetchArticlesForIssue(issue: string): Promise<ArticleSearc
     throw new Error("fetchArticlesForIssue requires a non-empty issue string");
   }
 
-  const candidates = await collectCandidateArticles();
+  const articles = await collectKeyIssueArticles();
 
-  if (!candidates.length) {
+  if (!articles.length) {
     throw new Error("No articles could be retrieved from the configured RSS feeds.");
   }
 
-  const scored = rankArticles(trimmedIssue, candidates);
-  const shortlist = scored.slice(0, 18);
-  const digest = buildArticlesDigest(shortlist);
+  const articleLookup = new Map<string, CandidateArticle>();
+
+  for (const article of articles) {
+    articleLookup.set(article.id, article);
+  }
+
+  const serializedArticles = formatArticlesForPrompt(articles);
 
   let lastValidationIssue: string | undefined;
 
@@ -81,10 +88,10 @@ export async function fetchArticlesForIssue(issue: string): Promise<ArticleSearc
     const result = await retryWithValidation(
       () =>
         generateObject({
-          model: openrouter(MODEL_ID),
+          model: openrouter(CLASSIFICATION_MODEL_ID),
           schema: articleSearchSchema,
           system: systemPrompt,
-          prompt: buildUserPrompt(trimmedIssue, shortlist.length, digest),
+          prompt: buildUserPrompt(trimmedIssue, articles.length, serializedArticles),
         }),
       async (raw) => {
         const validation = articleSearchSchema.safeParse(raw.object);
@@ -115,7 +122,39 @@ export async function fetchArticlesForIssue(issue: string): Promise<ArticleSearc
       },
     );
 
-    return articleSearchSchema.parse(result.object) as ArticleSearchResponse;
+    const selection = articleSearchSchema.parse(result.object);
+
+    const resolvedArticles: ArticleSearchResponse["articles"] = [];
+
+    for (const id of selection.articles) {
+      const match = articleLookup.get(id);
+
+      if (!match) {
+        console.warn(`[fetchArticlesForIssue] Ignoring unknown article id returned by the LLM: ${id}`);
+        continue;
+      }
+
+      const description = match.summary ?? null;
+
+      resolvedArticles.push({
+        title: match.title,
+        link: match.link,
+        source: match.source,
+        description,
+        publishedAt: match.publishedAt,
+        imageUrl: match.imageUrl ?? null,
+      });
+    }
+
+    if (!resolvedArticles.length) {
+      throw new Error("Article selection did not include any recognized article IDs.");
+    }
+
+    return {
+      issue: selection.issue,
+      summary: selection.summary,
+      articles: resolvedArticles,
+    } satisfies ArticleSearchResponse;
   } catch (error) {
     if (error instanceof Error && error.message.startsWith("Validation failed") && lastValidationIssue) {
       throw new Error(`Article selection failed schema validation: ${lastValidationIssue}`);
@@ -125,7 +164,7 @@ export async function fetchArticlesForIssue(issue: string): Promise<ArticleSearc
   }
 }
 
-async function collectCandidateArticles(): Promise<CandidateArticle[]> {
+async function collectKeyIssueArticles(): Promise<CandidateArticle[]> {
   const results = await Promise.allSettled(
     RSS_FEEDS.map(async (feed) => {
       try {
@@ -161,11 +200,11 @@ async function collectCandidateArticles(): Promise<CandidateArticle[]> {
     }
 
     for (const article of result.value) {
-      if (seenLinks.has(article.id)) {
+      if (seenLinks.has(article.link)) {
         continue;
       }
 
-      seenLinks.add(article.id);
+      seenLinks.add(article.link);
       aggregated.push(article);
     }
   }
@@ -202,11 +241,13 @@ function parseFeed(feedUrl: string, source: string, xml: string): CandidateArtic
       continue;
     }
 
+    const id = extractArticleId(normalizedLink);
+
     articles.push({
-      id: normalizedLink,
+      id,
       title: cleanText(title),
       link: normalizedLink,
-      summary: truncate(cleanText(summary), 420),
+      summary: cleanText(summary),
       publishedAt,
       source,
       feedUrl,
@@ -222,6 +263,31 @@ function extractTag(xml: string, tag: string): string | null {
   const regex = new RegExp(`<${escapedTag}[^>]*>([\\s\\S]*?)<\/${escapedTag}>`, "i");
   const match = regex.exec(xml);
   return match ? match[1] ?? null : null;
+}
+
+function extractArticleId(link: string): string {
+  try {
+    const url = new URL(link);
+    const segments = url.pathname.split("/").filter(Boolean);
+
+    if (!segments.length) {
+      return sanitizeId(url.hostname);
+    }
+
+    const lastSegment = segments[segments.length - 1];
+    const decoded = decodeURIComponent(lastSegment.trim());
+    return sanitizeId(decoded) || sanitizeId(url.hostname);
+  } catch {
+    return sanitizeId(link);
+  }
+}
+
+function sanitizeId(value: string): string {
+  if (!value) {
+    return "article";
+  }
+
+  return value.replace(/[^a-zA-Z0-9._-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 180) || "article";
 }
 
 function extractImageUrl(xml: string): string | null {
@@ -278,14 +344,6 @@ function cleanText(value: string): string {
   return output.replace(/\s+/g, " ").trim();
 }
 
-function truncate(value: string, maxLength: number): string {
-  if (value.length <= maxLength) {
-    return value;
-  }
-
-  return `${value.slice(0, maxLength - 3)}...`;
-}
-
 function normalizeLink(link: string): string | null {
   try {
     const url = new URL(link.trim());
@@ -314,72 +372,36 @@ function normalizeDate(raw: string | null): string | null {
   return date.toISOString();
 }
 
-function rankArticles(issue: string, articles: CandidateArticle[]): ScoredArticle[] {
-  const keywords = issue
-    .toLowerCase()
-    .split(/[\s,/]+/)
-    .map((word) => word.trim())
-    .filter(Boolean);
-
+function formatArticlesForPrompt(articles: CandidateArticle[]): string {
   return articles
     .map((article) => {
-      const text = `${article.title} ${article.summary}`.toLowerCase();
-      let score = 0;
-
-      for (const keyword of keywords) {
-        if (!keyword) continue;
-        if (article.title.toLowerCase().includes(keyword)) {
-          score += 5;
-        }
-        if (text.includes(keyword)) {
-          score += 2;
-        }
-      }
-
-      if (!score) {
-        score = 0.5;
-      }
-
-      if (article.publishedAt) {
-        const ageMs = Date.now() - Date.parse(article.publishedAt);
-        const ageDays = Math.max(0, ageMs / (1000 * 60 * 60 * 24));
-        score += Math.max(0, 6 - ageDays) * 0.3;
-      }
-
-      return { ...article, score };
-    })
-    .sort((a, b) => b.score - a.score);
-}
-
-function buildArticlesDigest(articles: ScoredArticle[]): string {
-  return articles
-    .map((article, index) => {
-      const lines = [
-        `Article ${index + 1}: ${article.title}`,
-        `Source: ${article.source}`,
-        article.publishedAt ? `Published: ${article.publishedAt}` : "Published: unknown",
-        `Link: ${article.link}`,
-        article.imageUrl ? `ImageUrl: ${article.imageUrl}` : null,
-        `Summary: ${article.summary}`,
-        `Score: ${article.score.toFixed(2)}`,
+      const fields = [
+        article.id,
+        sanitizeField(article.publishedAt ?? "unknown"),
+        sanitizeField(article.title),
+        sanitizeField(article.summary),
       ];
 
-      return lines.filter(Boolean).join("\n");
+      return fields.join("|");
     })
-    .join("\n\n");
+    .join("\n");
 }
 
-function buildUserPrompt(issue: string, candidateCount: number, digest: string): string {
+function sanitizeField(value: string): string {
+  const sanitized = value.replace(/[|]/g, "/").replace(/\r?\n|\r/g, " ").replace(/\s+/g, " ").trim();
+  return sanitized.length ? sanitized : "unknown";
+}
+
+function buildUserPrompt(issue: string, candidateCount: number, serializedArticles: string): string {
   return [
     `Key issue: ${issue}`,
-  `You will receive ${candidateCount} candidate articles pulled from major RSS feeds. Choose up to 10 that are most relevant to the key issue, prioritizing fresh coverage (ideally from the past 30 days).`,
-    "Always return the most relevant options even if perfect matches are unavailable.",
-     "Return JSON with the structure {\"issue\": string, \"summary\": string, \"articles\": Article[]}.",
-     "Each article must include the fields \"title\", \"link\", \"source\", \"description\", \"publishedAt\", and \"imageUrl\". Use null for description, publishedAt, or imageUrl when the information is unavailable.",
-  "Write the summary field as two or three sentences that synthesize the overall coverage trends.",
-  "Use ISO 8601 format for publishedAt when a date is provided; otherwise return null.",
-    "Derive each article description from the provided summary text without adding new facts.",
+  `You will receive ${candidateCount} candidate articles formatted as ID|PublishedAt|Title|Summary. Choose up to 10 IDs that best reflect the key issue, prioritizing fresh coverage (ideally from the past 30 days).`,
+    "Always return the most relevant options even if perfect matches are unavailable. Sort the selection from most relevant to least relevant, breaking ties in favor of newer publication dates.",
+    'Return JSON with the structure {"issue": string, "summary": string, "articles": string[]}.',
+  'Populate the articles array with the selected article IDs only, ordered by relevance (and recency when relevance is similar). Use the IDs exactly as provided.',
+    "Write the summary field as two or three sentences that synthesize the overall coverage trends.",
+    "Do not invent article IDs, or facts beyond what is provided.",
     "Candidate articles:",
-    digest,
+    serializedArticles,
   ].join("\n\n");
 }

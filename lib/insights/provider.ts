@@ -14,4 +14,5 @@ export const openrouter = createOpenRouter({
   },
 });
 
-export const MODEL_ID = process.env.OPENROUTER_MODEL ?? "google/gemini-2.5-flash-preview-09-2025";
+export const REASONING_MODEL_ID =
+  process.env.OPENROUTER_REASONING_MODEL ?? "google/gemini-2.5-flash-preview-09-2025";

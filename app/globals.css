@@ -26,6 +26,7 @@
   --accent: oklch(0.55 0.15 220); /* Trustworthy blue accent */
   --accent-foreground: oklch(0.985 0.002 247.858);
   --link: #1173d4;
+  --logo: #1173d4;
   --party-democrat: #1f4d7a;
   --party-democrat-foreground: #f4f7fb;
   --party-republican: #7a2a2a;
@@ -85,6 +86,7 @@
   --accent: oklch(0.65 0.15 220);
   --accent-foreground: oklch(0.95 0.005 247.858);
   --link: #1173d4;
+  --logo: #1173d4;
   --party-democrat: #5c7fab;
   --party-democrat-foreground: #0d1b2f;
   --party-republican: #b46868;
@@ -138,6 +140,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-link: var(--link);
+  --color-logo: var(--logo);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { toast } from "sonner";
 import { Share2, Link as LinkIcon, Twitter, Facebook, Linkedin } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 interface ShareMenuProps {
   url: string; // absolute URL to the candidate page
@@ -20,36 +20,68 @@ interface ShareMenuProps {
 }
 
 export default function ShareMenu({ url, title, hashtags = [] }: ShareMenuProps) {
-  const encodedUrl = encodeURIComponent(url);
-  const encodedText = encodeURIComponent(title);
-  const encodedHashtags = hashtags.join(",");
+  const normalizedHashtags = useMemo(
+    () =>
+      hashtags
+        .map((tag) => tag.trim().replace(/^#/, ""))
+        .filter(Boolean),
+    [hashtags],
+  );
 
-  const xUrl = `https://x.com/intent/post?text=${encodedText}&url=${encodedUrl}${encodedHashtags ? `&hashtags=${encodedHashtags}` : ""}`;
-  const facebookUrl = `https://www.facebook.com/sharer.php?u=${encodedUrl}${encodedText ? `&quote=${encodedText}` : ""}`;
-  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+  const shareTargets = useMemo(() => {
+    const xParams = new URLSearchParams();
+    if (title) {
+      xParams.set("text", title);
+    }
+    xParams.set("url", url);
+    if (normalizedHashtags.length > 0) {
+      xParams.set("hashtags", normalizedHashtags.join(","));
+    }
 
-  const [shouldUseNativeShare, setShouldUseNativeShare] = useState(false);
+    const facebookUrl = `https://www.facebook.com/share_channel/?type=reshare&link=${encodeURIComponent(
+      url,
+    )}&source_surface=external_reshare`;
+
+    const linkedinUrl = `https://www.linkedin.com/feed/?shareActive=true&shareUrl=${encodeURIComponent(
+      url,
+    )}`;
+
+    return [
+      {
+        label: "Share on X",
+        description: "Post to your followers immediately.",
+        icon: Twitter,
+        href: `https://x.com/intent/post?${xParams.toString()}`,
+      },
+      {
+        label: "Share on Facebook",
+        description: "Start a conversation with your network.",
+        icon: Facebook,
+        href: facebookUrl,
+      },
+      {
+        label: "Share on LinkedIn",
+        description: "Highlight the candidate to professional contacts.",
+        icon: Linkedin,
+        href: linkedinUrl,
+      },
+    ];
+  }, [normalizedHashtags, title, url]);
+
   const [menuOpen, setMenuOpen] = useState(false);
+  const [sharePreference, setSharePreference] = useState<"unknown" | "native" | "fallback">(
+    "unknown",
+  );
 
   useEffect(() => {
     if (typeof navigator === "undefined") {
-      setShouldUseNativeShare(false);
+      setSharePreference("fallback");
       return;
     }
 
-    const supportsShare = typeof navigator.share === "function";
-    if (!supportsShare) {
-      setShouldUseNativeShare(false);
+    if (typeof navigator.share !== "function") {
+      setSharePreference("fallback");
       return;
-    }
-
-    let canShareUrl = true;
-    if (typeof navigator.canShare === "function") {
-      try {
-        canShareUrl = navigator.canShare({ url });
-      } catch {
-        canShareUrl = false;
-      }
     }
 
     const userAgent = navigator.userAgent ?? "";
@@ -59,21 +91,50 @@ export default function ShareMenu({ url, title, hashtags = [] }: ShareMenuProps)
     const isTouchDevice = /(android|iphone|ipad|ipod|mobile|silk|tablet|windows phone)/i.test(userAgent);
     const isTouchEnabledMac = /mac/i.test(platform) && touchPoints > 1;
 
-    setShouldUseNativeShare(canShareUrl && (isTouchDevice || isTouchEnabledMac));
-  }, [url]);
+    setSharePreference(isTouchDevice || isTouchEnabledMac ? "native" : "fallback");
+  }, []);
 
   const attemptNativeShare = useCallback(async () => {
-    if (!shouldUseNativeShare || typeof navigator === "undefined" || typeof navigator.share !== "function") {
-      return false;
+    if (typeof navigator === "undefined" || typeof navigator.share !== "function") {
+      return "unsupported" as const;
+    }
+
+    const userAgent = navigator.userAgent ?? "";
+    const platform = navigator.platform ?? "";
+    const touchPoints = (navigator as Navigator & { maxTouchPoints?: number }).maxTouchPoints ?? 0;
+
+    const isTouchDevice = /(android|iphone|ipad|ipod|mobile|silk|tablet|windows phone)/i.test(userAgent);
+    const isTouchEnabledMac = /mac/i.test(platform) && touchPoints > 1;
+
+    if (!isTouchDevice && !isTouchEnabledMac) {
+      return "unsupported" as const;
+    }
+
+    const sharePayload = { title, url };
+
+    try {
+      if (typeof navigator.canShare === "function" && !navigator.canShare(sharePayload)) {
+        return "unsupported" as const;
+      }
+    } catch {
+      // navigator.canShare may throw for unsupported payloads; ignore and try anyway.
     }
 
     try {
-      await navigator.share({ title, url });
-      return true;
-    } catch {
-      return false;
+      await navigator.share(sharePayload);
+      return "success" as const;
+    } catch (error) {
+      const abortErrorName = "AbortError";
+      if (
+        (error instanceof DOMException && error.name === abortErrorName) ||
+        (typeof error === "object" && error !== null && "name" in error && (error as { name: string }).name === abortErrorName) ||
+        (typeof error === "string" && error === abortErrorName)
+      ) {
+        return "aborted" as const;
+      }
+      return "error" as const;
     }
-  }, [shouldUseNativeShare, title, url]);
+  }, [title, url]);
 
   const handleCopy = useCallback(async () => {
     try {
@@ -88,42 +149,31 @@ export default function ShareMenu({ url, title, hashtags = [] }: ShareMenuProps)
     }
   }, [url]);
 
-  const shareTargets = [
-    {
-      label: "Share on X",
-      description: "Post to your followers immediately.",
-      icon: Twitter,
-      href: xUrl,
-    },
-    {
-      label: "Share on Facebook",
-      description: "Start a conversation with your network.",
-      icon: Facebook,
-      href: facebookUrl,
-    },
-    {
-      label: "Share on LinkedIn",
-      description: "Highlight the candidate to professional contacts.",
-      icon: Linkedin,
-      href: linkedinUrl,
-    },
-  ];
-
   const handleMenuOpenChange = useCallback(
     (nextOpen: boolean) => {
-      if (nextOpen) {
-        void (async () => {
-          const usedNativeShare = await attemptNativeShare();
-          if (!usedNativeShare) {
-            setMenuOpen(true);
-          }
-        })();
+      if (!nextOpen) {
+        setMenuOpen(false);
         return;
       }
 
-      setMenuOpen(false);
+      if (sharePreference === "fallback") {
+        setMenuOpen(true);
+        return;
+      }
+
+      void (async () => {
+        const result = await attemptNativeShare();
+
+        if (result === "success" || result === "aborted") {
+          setSharePreference("native");
+          return;
+        }
+
+        setSharePreference("fallback");
+        setMenuOpen(true);
+      })();
     },
-    [attemptNativeShare]
+    [attemptNativeShare, sharePreference],
   );
 
   return (
