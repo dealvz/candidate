@@ -176,6 +176,27 @@ export default function ShareMenu({ url, title, hashtags = [] }: ShareMenuProps)
     [attemptNativeShare, sharePreference],
   );
 
+  const handleButtonClick = useCallback(() => {
+    if (sharePreference === "native") {
+      void attemptNativeShare();
+    }
+  }, [attemptNativeShare, sharePreference]);
+
+  if (sharePreference === "native") {
+    return (
+      <Button
+        aria-label="Share candidate profile"
+        size="sm"
+        variant="outline"
+        className="gap-2"
+        onClick={handleButtonClick}
+      >
+        <Share2 className="size-4" aria-hidden="true" />
+        <span className="hidden sm:inline-flex">Share</span>
+      </Button>
+    );
+  }
+
   return (
     <DropdownMenu open={menuOpen} onOpenChange={handleMenuOpenChange}>
       <DropdownMenuTrigger asChild>
